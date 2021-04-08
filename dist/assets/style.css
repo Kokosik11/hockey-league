@@ -30,11 +30,13 @@ header {
     left: 0;
     display: flex;
     width: 100%;
-    height: 99px;
+    min-height: 99px;
     justify-content: space-between;
     align-items: center;
     padding: 0 120px; 
     background-color: #07081D;
+    z-index: 10;
+    box-shadow: 4px 0 4px 4px rgba(0, 0, 0, 0.247);
 }
 
 .pages ul li a {
@@ -42,6 +44,7 @@ header {
     margin: 0 9px;
     padding: 5px 14px;
     color: var(--first-color);
+    font-size: 20px;
     transition: .25s;
 
 }
@@ -71,4 +74,73 @@ li .active {
 
 .pages ul li .active {
     color: var(--second-color);
+}
+
+.social-links ul .iconify {
+    color: #fff; 
+    font-size: 32px;
+    transition: .25s;
+}
+
+.social-links ul .iconify:hover {
+    color: var(--second-color);
+    cursor: pointer;
+    transition: .25s;
+}
+
+.header-content {
+    background-image: url('./imgs/background.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 750px;
+    display: flex;
+}
+
+h1 {
+    color: var(--first-color);
+    font-size: 48px;
+    font-weight: 100;
+}
+
+.header-heading {
+    padding: 250px 120px;
+    width: 850px;
+}
+
+.header-content aside {
+    margin: 210px 110px;
+}
+
+.header-content button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 272px;
+    height: 69px;
+    background-color: var(--second-color);
+    border: none;
+    outline: none;
+    border-radius: 69px;
+    margin: 30px 0;
+    color: var(--first-color);
+    font-size: 26px;
+    transition: .25s;
+}
+
+.header-content button .iconify { 
+    margin: 0 15px 0 0;
+    font-size: 36px;
+}
+
+.header-content button:hover {
+    background-color: #fa5563;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.afisha-content {
+    display: flex;
+    width: 944px;
+    height: 358px;
 }
