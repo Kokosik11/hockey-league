@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mainpage.apps.MainpageConfig',
     'teams.apps.TeamsConfig',
+    'players.apps.PlayersConfig',
 ]
 
 MIDDLEWARE = [
