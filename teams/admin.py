@@ -5,6 +5,8 @@ from players.models import Player
 class PlayerTeamInline(admin.TabularInline):
     model = Player
     raw_id_fields = ['team']
+    fields = ('id', 'name', 'surname', 'citizenship')
+    readonly_fields = ('id', 'name', 'surname', 'citizenship')
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):

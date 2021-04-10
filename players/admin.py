@@ -8,3 +8,7 @@ class PlayerAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name', 'surname',)}
     search_fields = ('name', 'surname', 'team')
     ordering = ['name']
+
+
+admin.site.site_title = 'Администрирование ОХЛ'
+admin.site.site_header = 'Объединенная хоккейная лига'

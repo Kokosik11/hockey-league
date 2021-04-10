@@ -19,3 +19,4 @@ class Player(models.Model):
 
    class Meta:
       verbose_name = "Игрок"
+      verbose_name_plural = "Игроки"
