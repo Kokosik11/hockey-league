@@ -6,7 +6,7 @@ class PlayerAdmin(admin.ModelAdmin):
     list_display = ('name', 'surname', 'team')
     list_display_links = ('name', 'team')
     prepopulated_fields = {'slug': ('name', 'surname',)}
-    search_fields = ('name', 'surname', 'team')
+    search_fields = ('name', 'surname')
     ordering = ['name']
 
 

@@ -12,7 +12,9 @@ class Player(models.Model):
    height = models.PositiveSmallIntegerField('Рост', blank=True)
    weight = models.PositiveSmallIntegerField('Вес', blank=True)
    citizenship = models.CharField('Гражданство', max_length=100)
+   position = models.CharField('Позиция', max_length=100, default='')
    date_of_birth = models.DateField("Дата рождения", default=timezone.now)
+   captain = models.BooleanField('Капитан', default=False)
 
    def __str__(self):
       return self.surname

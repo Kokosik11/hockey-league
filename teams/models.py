@@ -5,7 +5,6 @@ class Team(models.Model):
    year_of_foundation = models.PositiveSmallIntegerField('Год основания', blank=True)
    league = models.CharField('Лига', max_length=50)
    logo = models.ImageField('Лого команды', default='default.jpg', upload_to='team_images')
-   captain = models.CharField('Капитан', max_length=100)
    coach = models.CharField('Тренер', max_length=100)
    location = models.CharField('Местоположение', max_length=100)
    slug = models.SlugField("Ссылка", max_length=130, unique=True, default='', help_text="ссылка на профиль команды")
