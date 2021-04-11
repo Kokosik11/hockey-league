@@ -14,6 +14,7 @@ class Player(models.Model):
    citizenship = models.CharField('Гражданство', max_length=100)
    position = models.CharField('Позиция', max_length=100, default='')
    date_of_birth = models.DateField("Дата рождения", default=timezone.now)
+   age = models.PositiveSmallIntegerField('Возраст', blank=True, default=20)
    captain = models.BooleanField('Капитан', default=False)
 
    def __str__(self):

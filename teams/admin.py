@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Team
+from .models import Team, Trainer
 from players.models import Player
 
 class PlayerTeamInline(admin.TabularInline):
@@ -16,3 +16,11 @@ class TeamAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     ordering = ['name']
     inlines = [PlayerTeamInline]
+
+@admin.register(Trainer)
+class TrainerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
+    list_display_links = ('slug', 'name',)
+    prepopulated_fields = {'slug': ('name', 'surname')}
+    search_fields = ('name', 'surname',)
+    ordering = ['name'] 
