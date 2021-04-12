@@ -8,6 +8,7 @@ urlpatterns = [
     path('', include('mainpage.urls')),
     path('teams/', include('teams.urls')),
     path('players/', include('players.urls')),
+    path('match/', include('match.urls')),
     path('tinymce/', include('tinymce.urls')),
 ]
 
