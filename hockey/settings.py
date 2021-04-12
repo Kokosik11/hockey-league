@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'mainpage.apps.MainpageConfig',
     'teams.apps.TeamsConfig',
     'players.apps.PlayersConfig',
+    'tinymce',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
