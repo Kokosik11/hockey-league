@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from tinymce.models import HTMLField
 
 class Trainer(models.Model):
    name = models.CharField('Имя', max_length=100)
@@ -11,7 +12,7 @@ class Trainer(models.Model):
    slug = models.SlugField("Ссылка", max_length=130, unique=True, default='', help_text="ссылка на профиль тренера")
 
    def __str__(self):
-      return self.name + self.surname
+      return '{} {}'.format(self.name, self.surname)
 
    class Meta:
       verbose_name = "Тренер"
@@ -25,6 +26,7 @@ class Team(models.Model):
    location = models.CharField('Местоположение', max_length=100)
    slug = models.SlugField("Ссылка", max_length=130, unique=True, default='', help_text="ссылка на профиль команды")
    trainer = models.ForeignKey(Trainer, related_name='trainer', verbose_name="тренеры", on_delete=models.CASCADE, null=True, blank=True)
+   content = HTMLField("Информация о команде", default="", blank=True, max_length=5000)
 
    def __str__(self):
       return self.name
