@@ -54,7 +54,6 @@ header {
     color: var(--first-color);
     font-size: 20px;
     transition: .25s;
-
 }
 
 .pages ul li a:hover {
@@ -210,11 +209,14 @@ h1 {
 .text-live_title {
     color: var(--unactive-color);
     margin: 0 5px;
+    border-bottom: 1px solid #ff495800;
+    transition: 0.25s;
 }
 
 .text-live_title:hover {
     color: var(--second-color);
     border-bottom: 1px solid var(--second-color);
+    transition: 0.25s all;
 }
 
 .schedule {
