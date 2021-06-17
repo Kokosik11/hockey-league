@@ -1,0 +1,19 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.page-heading {
+    margin-top: 169px;
+    margin-bottom: 86px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page-heading h1 {
+    max-width: 880px;
+    color: rgba(255, 255, 255, 0.43);
+}
+
