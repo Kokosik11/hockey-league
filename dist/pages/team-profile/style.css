@@ -40,3 +40,117 @@ main {
 .promo-avatar img {
     width: 180px;
 }
+
+.promo-info {
+    margin-left: 67px;
+}
+
+.promo-title .club-name {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.promo-stats {
+    display: flex;
+    width: 104px;
+    justify-content: space-between;
+    padding: 8px 0 11px;
+    border-bottom: 4px solid #343434;
+    border-radius: 3px;
+}
+
+.promo-stats .circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.promo-stats .green {
+    background-color: #46A753;
+}
+
+.promo-stats .red {
+    background-color: #FF4957;
+}
+
+.promo-country,
+.promo-year,
+.promo-capitan,
+.promo-trainer {
+    margin-top: 21px;
+}
+
+.promo-country,
+.promo-capitan_content,
+.promo-trainer_content,
+.promo-year_content {
+    display: flex;
+    color: white;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.promo-capitan_label,
+.promo-trainer_label,
+.promo-year_label {
+    color: #858585;
+    font-size: 13px;
+}
+
+.promo-country div,
+.promo-capitan_content div,
+.promo-trainer_content div,
+.promo-year_content div {
+    margin-left: 8px;
+}
+
+.selections {
+    display: flex;
+    width: 480px;
+    justify-content: space-between;
+    margin-top: 83px;
+}
+
+.selections button {
+    background-color: #1C1C1C;
+    border: none;
+    color: #878787;
+    width: 228px;
+    height: 53px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.selections button svg path {
+    fill: #878787;
+    transition: .25s;
+}
+
+.selections button:hover {
+    cursor: pointer;
+}
+
+.selections button:hover svg path {
+    fill: #FF4957;
+    transition: .25s;
+}
+
+.selections button:hover {
+    color: #ffffff;
+    transition: .25s;
+}
+
+.teamlist-icon_block, .match-icon_block {
+    width: 53px;
+    height: 100%;
+    background-color: #2E2D2D;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
