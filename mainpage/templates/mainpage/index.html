@@ -115,36 +115,13 @@
             <section class="news">
                 <h2>Новости</h2>
                 <div class="news-content">
+                    {% for post in posts %}
                     <div class="news-block">
                         <img src="/pictures/news-1.png" alt="news photo">
-                        <div><span>Читать</span></div>
-                        <h3 class="news-heading">Это заголовок к новостям</h3>   
+                        <div><span><a href="{{ post.get_absolute_url }}" id="more">Читать</a></span></div>
+                        <h3 class="news-heading">{{ post.title }}</h3>   
                     </div>
-                    <div class="news-block">
-                        <img src="/pictures/news-2.png" alt="news photo">
-                        <div><span>Читать</span></div>
-                        <h3 class="news-heading">Это заголовок к новостям</h3>   
-                    </div>
-                    <div class="news-block">
-                        <img src="/pictures/news-3.png" alt="news photo">
-                        <div><span>Читать</span></div>
-                        <h3 class="news-heading">Это заголовок к новостям</h3>   
-                    </div>
-                    <div class="news-block">
-                        <img src="/pictures/news-4.png" alt="news photo">
-                        <div><span>Читать</span></div>
-                        <h3 class="news-heading">Это заголовок к новостям</h3>   
-                    </div>
-                    <div class="news-block">
-                        <img src="/pictures/news-5.png" alt="news photo">
-                        <div><span>Читать</span></div>
-                        <h3 class="news-heading">Это заголовок к новостям</h3>   
-                    </div>
-                    <div class="news-block">
-                        <img src="/pictures/news-6.png" alt="news photo">
-                        <div><span>Читать</span></div>
-                        <h3 class="news-heading">Это заголовок к новостям</h3>   
-                    </div>
+                    {% endfor %}
                 </div>
                 <button class="more-news">
                     <div class="btn-icon"><span class="iconify" data-inline="false" data-icon="ant-design:cloud-sync-outlined"></span></div>
@@ -181,7 +158,7 @@
                             </div>
                             <button>
                                 <span class="iconify" data-inline="false" data-icon="akar-icons:link-out" style="color: #FF4957; font-size: 26px;"></span>
-                                <span>Команды</span>
+                                <span> <a href="{% url 'teams' %}">Команды</a></span>
                             </button>
                         </div>
                         <div class="section-icon">

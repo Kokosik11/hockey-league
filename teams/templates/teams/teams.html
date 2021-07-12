@@ -60,149 +60,41 @@
             </section>
 
             <section class="teamlist">
-                <div class="team">
-                    <div class="profile">
-                        <img src="/pictures/team_images/logo.png" alt="logo">
-                        <div class="team-title">Грифоны-1</div>    
-                    </div>
-
-                    <div class="team-btns">
-                        <button class="small-btn">
-                            <img src="/pictures/list.svg" alt="List">
-                        </button>
-                        <div class="score-circle">
-                            <svg class="score_img" width="53" height="54" viewBox="0 0 53 54" xmlns="http://www.w3.org/2000/svg">
-                                <path class="score_img" d="M51.287 19.0149L35.3986 16.5513L28.2961 1.18846C28.1021 0.767832 27.783 0.427326 27.3887 0.220352C26.4 -0.300422 25.1985 0.133556 24.7042 1.18846L17.6016 16.5513L1.71327 19.0149C1.27523 19.0817 0.874733 19.302 0.568104 19.6359C0.197407 20.0424 -0.00686415 20.5893 0.00017613 21.1564C0.00721641 21.7235 0.224992 22.2645 0.60565 22.6604L12.1011 34.6181L9.38524 51.5032C9.32155 51.896 9.36229 52.2999 9.50284 52.6693C9.64338 53.0386 9.87811 53.3586 10.1804 53.5928C10.4827 53.8271 10.8405 53.9662 11.2131 53.9946C11.5858 54.0229 11.9584 53.9393 12.2888 53.7532L26.5001 45.7814L40.7114 53.7532C41.0994 53.9735 41.55 54.047 41.9818 53.9669C43.0706 53.7666 43.8027 52.6649 43.615 51.5032L40.8992 34.6181L52.3946 22.6604C52.7075 22.3332 52.914 21.9059 52.9766 21.4385C53.1455 20.2701 52.3821 19.1885 51.287 19.0149Z"/>
-                            </svg>    
-                            <div class="score">1</div>
+                {% for team in page_obj.object_list %}
+                    <div class="team">
+                        <div class="profile">
+                            <img src="{{ team.logo.url }}" alt="logo">
+                            <div class="team-title">{{ team.name }}</div>    
                         </div>
-                        <button class="small-btn">
-                            <img src="/pictures/team.png" alt="Team">
-                        </button>
-                    </div>
-                </div>
 
-                <div class="team">
-                    <div class="profile">
-                        <img src="/pictures/team_images/4639021344470c8814e9f799073924a5 1.png" alt="logo">
-                        <div class="team-title">Барыс-1</div>    
-                    </div>
-
-                    <div class="team-btns">
-                        <button class="small-btn">
-                            <img src="/pictures/list.svg" alt="List">
-                        </button>
-                        <div class="score-circle">
-                            <svg class="score_img" width="53" height="54" viewBox="0 0 53 54" xmlns="http://www.w3.org/2000/svg">
-                                <path class="score_img" d="M51.287 19.0149L35.3986 16.5513L28.2961 1.18846C28.1021 0.767832 27.783 0.427326 27.3887 0.220352C26.4 -0.300422 25.1985 0.133556 24.7042 1.18846L17.6016 16.5513L1.71327 19.0149C1.27523 19.0817 0.874733 19.302 0.568104 19.6359C0.197407 20.0424 -0.00686415 20.5893 0.00017613 21.1564C0.00721641 21.7235 0.224992 22.2645 0.60565 22.6604L12.1011 34.6181L9.38524 51.5032C9.32155 51.896 9.36229 52.2999 9.50284 52.6693C9.64338 53.0386 9.87811 53.3586 10.1804 53.5928C10.4827 53.8271 10.8405 53.9662 11.2131 53.9946C11.5858 54.0229 11.9584 53.9393 12.2888 53.7532L26.5001 45.7814L40.7114 53.7532C41.0994 53.9735 41.55 54.047 41.9818 53.9669C43.0706 53.7666 43.8027 52.6649 43.615 51.5032L40.8992 34.6181L52.3946 22.6604C52.7075 22.3332 52.914 21.9059 52.9766 21.4385C53.1455 20.2701 52.3821 19.1885 51.287 19.0149Z"/>
-                            </svg>    
-                            <div class="score">2</div>
+                        <div class="team-btns">
+                            <button class="small-btn">
+                                <img src="/pictures/list.svg" alt="List">
+                            </button>
+                            <div class="score-circle">
+                                <svg class="score_img" width="53" height="54" viewBox="0 0 53 54" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="score_img" d="M51.287 19.0149L35.3986 16.5513L28.2961 1.18846C28.1021 0.767832 27.783 0.427326 27.3887 0.220352C26.4 -0.300422 25.1985 0.133556 24.7042 1.18846L17.6016 16.5513L1.71327 19.0149C1.27523 19.0817 0.874733 19.302 0.568104 19.6359C0.197407 20.0424 -0.00686415 20.5893 0.00017613 21.1564C0.00721641 21.7235 0.224992 22.2645 0.60565 22.6604L12.1011 34.6181L9.38524 51.5032C9.32155 51.896 9.36229 52.2999 9.50284 52.6693C9.64338 53.0386 9.87811 53.3586 10.1804 53.5928C10.4827 53.8271 10.8405 53.9662 11.2131 53.9946C11.5858 54.0229 11.9584 53.9393 12.2888 53.7532L26.5001 45.7814L40.7114 53.7532C41.0994 53.9735 41.55 54.047 41.9818 53.9669C43.0706 53.7666 43.8027 52.6649 43.615 51.5032L40.8992 34.6181L52.3946 22.6604C52.7075 22.3332 52.914 21.9059 52.9766 21.4385C53.1455 20.2701 52.3821 19.1885 51.287 19.0149Z"/>
+                                </svg>    
+                                <div class="score">{{ team.id }}</div>
+                            </div>
+                            <button class="small-btn">
+                                <img src="/pictures/team.png" alt="Team">
+                            </button>
                         </div>
-                        <button class="small-btn">
-                            <img src="/pictures/team.png" alt="Team">
-                        </button>
                     </div>
-                </div>
-
-                <div class="team">
-                    <div class="profile">
-                        <img src="/pictures/team_images/logo.png" alt="logo">
-                        <div class="team-title">Грифоны-2</div>    
-                    </div>
-
-                    <div class="team-btns">
-                        <button class="small-btn">
-                            <img src="/pictures/list.svg" alt="List">
-                        </button>
-                        <div class="score-circle">
-                            <svg class="score_img" width="53" height="54" viewBox="0 0 53 54" xmlns="http://www.w3.org/2000/svg">
-                                <path class="score_img" d="M51.287 19.0149L35.3986 16.5513L28.2961 1.18846C28.1021 0.767832 27.783 0.427326 27.3887 0.220352C26.4 -0.300422 25.1985 0.133556 24.7042 1.18846L17.6016 16.5513L1.71327 19.0149C1.27523 19.0817 0.874733 19.302 0.568104 19.6359C0.197407 20.0424 -0.00686415 20.5893 0.00017613 21.1564C0.00721641 21.7235 0.224992 22.2645 0.60565 22.6604L12.1011 34.6181L9.38524 51.5032C9.32155 51.896 9.36229 52.2999 9.50284 52.6693C9.64338 53.0386 9.87811 53.3586 10.1804 53.5928C10.4827 53.8271 10.8405 53.9662 11.2131 53.9946C11.5858 54.0229 11.9584 53.9393 12.2888 53.7532L26.5001 45.7814L40.7114 53.7532C41.0994 53.9735 41.55 54.047 41.9818 53.9669C43.0706 53.7666 43.8027 52.6649 43.615 51.5032L40.8992 34.6181L52.3946 22.6604C52.7075 22.3332 52.914 21.9059 52.9766 21.4385C53.1455 20.2701 52.3821 19.1885 51.287 19.0149Z"/>
-                            </svg>    
-                            <div class="score">3</div>
-                        </div>
-                        <button class="small-btn">
-                            <img src="/pictures/team.png" alt="Team">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="team">
-                    <div class="profile">
-                        <img src="/pictures/team_images/4639021344470c8814e9f799073924a5 1.png" alt="logo">
-                        <div class="team-title">Барыс-2</div>    
-                    </div>
-
-                    <div class="team-btns">
-                        <button class="small-btn">
-                            <img src="/pictures/list.svg" alt="List">
-                        </button>
-                        <div class="score-circle">
-                            <svg class="score_img" width="53" height="54" viewBox="0 0 53 54" xmlns="http://www.w3.org/2000/svg">
-                                <path class="score_img" d="M51.287 19.0149L35.3986 16.5513L28.2961 1.18846C28.1021 0.767832 27.783 0.427326 27.3887 0.220352C26.4 -0.300422 25.1985 0.133556 24.7042 1.18846L17.6016 16.5513L1.71327 19.0149C1.27523 19.0817 0.874733 19.302 0.568104 19.6359C0.197407 20.0424 -0.00686415 20.5893 0.00017613 21.1564C0.00721641 21.7235 0.224992 22.2645 0.60565 22.6604L12.1011 34.6181L9.38524 51.5032C9.32155 51.896 9.36229 52.2999 9.50284 52.6693C9.64338 53.0386 9.87811 53.3586 10.1804 53.5928C10.4827 53.8271 10.8405 53.9662 11.2131 53.9946C11.5858 54.0229 11.9584 53.9393 12.2888 53.7532L26.5001 45.7814L40.7114 53.7532C41.0994 53.9735 41.55 54.047 41.9818 53.9669C43.0706 53.7666 43.8027 52.6649 43.615 51.5032L40.8992 34.6181L52.3946 22.6604C52.7075 22.3332 52.914 21.9059 52.9766 21.4385C53.1455 20.2701 52.3821 19.1885 51.287 19.0149Z"/>
-                            </svg>    
-                            <div class="score">4</div>
-                        </div>
-                        <button class="small-btn">
-                            <img src="/pictures/team.png" alt="Team">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="team">
-                    <div class="profile">
-                        <img src="/pictures/team_images/logo.png" alt="logo">
-                        <div class="team-title">Грифоны-3</div>    
-                    </div>
-
-                    <div class="team-btns">
-                        <button class="small-btn">
-                            <img src="/pictures/list.svg" alt="List">
-                        </button>
-                        <div class="score-circle">
-                            <svg class="score_img" width="53" height="54" viewBox="0 0 53 54" xmlns="http://www.w3.org/2000/svg">
-                                <path class="score_img" d="M51.287 19.0149L35.3986 16.5513L28.2961 1.18846C28.1021 0.767832 27.783 0.427326 27.3887 0.220352C26.4 -0.300422 25.1985 0.133556 24.7042 1.18846L17.6016 16.5513L1.71327 19.0149C1.27523 19.0817 0.874733 19.302 0.568104 19.6359C0.197407 20.0424 -0.00686415 20.5893 0.00017613 21.1564C0.00721641 21.7235 0.224992 22.2645 0.60565 22.6604L12.1011 34.6181L9.38524 51.5032C9.32155 51.896 9.36229 52.2999 9.50284 52.6693C9.64338 53.0386 9.87811 53.3586 10.1804 53.5928C10.4827 53.8271 10.8405 53.9662 11.2131 53.9946C11.5858 54.0229 11.9584 53.9393 12.2888 53.7532L26.5001 45.7814L40.7114 53.7532C41.0994 53.9735 41.55 54.047 41.9818 53.9669C43.0706 53.7666 43.8027 52.6649 43.615 51.5032L40.8992 34.6181L52.3946 22.6604C52.7075 22.3332 52.914 21.9059 52.9766 21.4385C53.1455 20.2701 52.3821 19.1885 51.287 19.0149Z"/>
-                            </svg>    
-                            <div class="score">5</div>
-                        </div>
-                        <button class="small-btn">
-                            <img src="/pictures/team.png" alt="Team">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="team">
-                    <div class="profile">
-                        <img src="/pictures/team_images/4639021344470c8814e9f799073924a5 1.png" alt="logo">
-                        <div class="team-title">Барыс-3</div>    
-                    </div>
-
-                    <div class="team-btns">
-                        <button class="small-btn">
-                            <img src="/pictures/list.svg" alt="List">
-                        </button>
-                        <div class="score-circle">
-                            <svg class="score_img" width="53" height="54" viewBox="0 0 53 54" xmlns="http://www.w3.org/2000/svg">
-                                <path class="score_img" d="M51.287 19.0149L35.3986 16.5513L28.2961 1.18846C28.1021 0.767832 27.783 0.427326 27.3887 0.220352C26.4 -0.300422 25.1985 0.133556 24.7042 1.18846L17.6016 16.5513L1.71327 19.0149C1.27523 19.0817 0.874733 19.302 0.568104 19.6359C0.197407 20.0424 -0.00686415 20.5893 0.00017613 21.1564C0.00721641 21.7235 0.224992 22.2645 0.60565 22.6604L12.1011 34.6181L9.38524 51.5032C9.32155 51.896 9.36229 52.2999 9.50284 52.6693C9.64338 53.0386 9.87811 53.3586 10.1804 53.5928C10.4827 53.8271 10.8405 53.9662 11.2131 53.9946C11.5858 54.0229 11.9584 53.9393 12.2888 53.7532L26.5001 45.7814L40.7114 53.7532C41.0994 53.9735 41.55 54.047 41.9818 53.9669C43.0706 53.7666 43.8027 52.6649 43.615 51.5032L40.8992 34.6181L52.3946 22.6604C52.7075 22.3332 52.914 21.9059 52.9766 21.4385C53.1455 20.2701 52.3821 19.1885 51.287 19.0149Z"/>
-                            </svg>    
-                            <div class="score">6</div>
-                        </div>
-                        <button class="small-btn">
-                            <img src="/pictures/team.png" alt="Team">
-                        </button>
-                    </div>
-                </div>
-
+                {% endfor %}
             </section>
+
+            
             <section class="pages">
-                <div class="pages-btns">
-                    <div class="circle double-prev">&lt;&lt;</div>
-                    <div class="circle prev">&lt;</div>
-                    <div class="page-display">
-                        <span class="active-page">1</span>/<span class="all-pages">3</span>
-                    </div>
-                    <div class="circle_active next">&gt;</div>
-                    <div class="circle_active double-next">&gt;&gt;</div>
-                </div>
+                {%if page_obj.has_previous %} {# whether the previous page exists #}
+                    <a href="?page={{page_obj.previous_page_number}}"><img src="/pictures/ArrowLeft.svg" alt=""></a> {# link to the prev page #}
+                {% endif %}
+                <span class="current-page">{{page_obj.number}}</span> {# the current page number #}
+                
+                {%if page_obj.has_next %} {# whether the next page exists #}
+                    <a href="?page={{page_obj.next_page_number}}"><img src="/pictures/ArrowRight.svg" alt=""></a> {# link to the next page #}
+                {% endif %}
             </section>
     </main>
 

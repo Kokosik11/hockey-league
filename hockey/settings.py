@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'teams.apps.TeamsConfig',
     'players.apps.PlayersConfig',
     'match.apps.MatchConfig',
-    'tinymce',
+    'ckeditor',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'

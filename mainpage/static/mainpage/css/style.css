@@ -355,6 +355,7 @@ h1 {
 
 .news-block .news-heading {
   display: flex;
+  justify-content: center;
   margin-top: 24px;
   font-size: 26px;
   color: rgba(255, 255, 255, 0.30);
@@ -385,10 +386,10 @@ h1 {
   transition: .25s;
 }
 
-.news-block div > span:hover {
-  color: #fd7984;
-  border-bottom-color: #fd7984;
-  cursor: pointer;
+#more {
+  text-decoration: none;
+  border-bottom: 2px solid #FF4957;
+  color: #FF4957;
   transition: .25s;
 }
 
@@ -519,7 +520,9 @@ h1 {
   transition: .25s;
 }
 
-.section-content button span {
+.section-content button span a {
+  text-decoration: none;
+  color: #fff;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
 }
 

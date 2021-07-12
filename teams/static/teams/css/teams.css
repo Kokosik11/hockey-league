@@ -167,3 +167,14 @@ main {
   cursor: pointer;
   transition: .25s;
 }
+
+.pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.current-page {
+  color: #fff;
+  font-size: 20px;
+  padding: 5px;
+}
