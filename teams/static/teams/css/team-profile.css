@@ -1,0 +1,297 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-heading {
+  margin-top: 169px;
+  margin-bottom: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.page-heading h1 {
+  max-width: 880px;
+  color: rgba(255, 255, 255, 0.43);
+}
+
+.promo {
+  max-width: 696px;
+  background-color: #1C1C1C;
+  border-radius: 8px;
+  display: flex;
+  box-sizing: border-box;
+  padding: 55px 60px;
+}
+
+.promo-avatar {
+  background-color: #343434;
+  width: 236px;
+  height: 236px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-avatar img {
+  width: 180px;
+}
+
+.promo-info {
+  margin-left: 67px;
+}
+
+.promo-title .club-name {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.promo-stats {
+  display: flex;
+  width: 104px;
+  justify-content: space-between;
+  padding: 8px 0 11px;
+  border-bottom: 4px solid #343434;
+  border-radius: 3px;
+}
+
+.promo-stats .circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.promo-stats .green {
+  background-color: #46A753;
+}
+
+.promo-stats .red {
+  background-color: #FF4957;
+}
+
+.promo-country,
+.promo-year,
+.promo-capitan,
+.promo-trainer {
+  margin-top: 21px;
+}
+
+.promo-country,
+.promo-capitan_content,
+.promo-trainer_content,
+.promo-year_content {
+  display: flex;
+  color: white;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.promo-capitan_label,
+.promo-trainer_label,
+.promo-year_label {
+  color: #858585;
+  font-size: 13px;
+}
+
+.promo-country div,
+.promo-capitan_content div,
+.promo-trainer_content div,
+.promo-year_content div {
+  margin-left: 8px;
+}
+
+.selections {
+  display: flex;
+  width: 480px;
+  justify-content: space-between;
+  margin-top: 83px;
+}
+
+.selections button {
+  background-color: #1C1C1C;
+  border: none;
+  color: #878787;
+  width: 228px;
+  height: 53px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.match-title, .teamlist-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.selections button svg path {
+  fill: #878787;
+  transition: .25s;
+}
+
+.selections button:hover {
+  cursor: pointer;
+}
+
+.selections button:hover svg path, .selections .btn-active svg path {
+  fill: #FF4957;
+  transition: .25s;
+}
+
+.selections button:hover, .selections .btn-active {
+  color: #ffffff;
+  transition: .25s;
+}
+
+.teamlist-icon_block, .match-icon_block {
+  width: 53px;
+  height: 100%;
+  background-color: #2E2D2D;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teamlist-section {
+  width: 651px;
+  margin-top: 50px;
+}
+
+.table {
+  max-width: 651px;
+  overflow-x: auto;
+}
+
+table {
+  border-spacing: 0 10px;
+}
+
+table thead tr th::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3%;
+  height: 4px;
+  width: 94%;
+  background-color: #FF4957;
+  border-radius: 5px;
+}
+
+table thead tr th {
+  position: relative;
+  background: #1C1C1C;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  height: 49px;
+  margin-left: 3px;
+
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+td .flex-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table tbody tr {
+  background: #2E2D2D;
+  text-align: center;
+  line-height: normal;
+  color: #858585;
+  height: 49px;
+}
+
+.table-avatar {
+  width: 36px;
+  height: 36px;
+  margin-left: 16px;
+}
+
+.table-country {
+  margin-right: 7px;
+}
+
+.teamlist-row {
+  position: relative;
+}
+
+.teamlist-row::after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 4px;
+  top: 10%;
+  left: 0;
+  background-color: #FF4957;
+  border-radius: 8px;
+}
+
+.matches {
+  width: 698px;
+}
+
+.rival-logo {
+  width: 27px;
+  margin-right: 5px;
+}
+
+.win .score {
+  color: #46A753;
+}
+
+.lose .score {
+  color: #FF4957;
+}
+
+.draw .score {
+  color: #FFD234;
+}
+
+.matches-row {
+  position: relative;
+}
+
+.matches-row::after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 4px;
+  top: 10%;
+  left: 0;
+  border-radius: 8px;
+}
+
+.lose::after {
+  background-color: #FF4957;
+}
+
+.win::after {
+  background-color: #46A753;
+}
+
+.draw::after {
+  background-color: #FFD234;
+}

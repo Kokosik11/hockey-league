@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Team
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -19,3 +19,15 @@ def teams(request):
       'page_obj': page_obj,
    }
    return render(request, 'teams/teams.html', context)
+
+
+def team_detail(request, slug):
+    team = get_object_or_404(Team, slug=slug)
+    team_object = Team.objects.get(slug=slug)
+
+    context = {
+        'team': team,
+        'team_object': team_object,
+    }
+
+    return render(request, 'teams/team-detail.html', context)

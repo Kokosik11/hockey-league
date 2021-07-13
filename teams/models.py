@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
 from tinymce.models import HTMLField
 
 class Trainer(models.Model):
@@ -27,6 +28,9 @@ class Team(models.Model):
    slug = models.SlugField("Ссылка", max_length=130, unique=True, default='', help_text="ссылка на профиль команды")
    trainer = models.ForeignKey(Trainer, related_name='trainer', verbose_name="тренеры", on_delete=models.CASCADE, null=True, blank=True)
    content = HTMLField("Информация о команде", default="", blank=True, max_length=5000)
+
+   def get_absolute_url(self):
+      return reverse('team-detail', args=[self.slug])
 
    def __str__(self):
       return self.name
