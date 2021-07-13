@@ -16,14 +16,11 @@ class Post(models.Model):
   created_on = models.DateTimeField(auto_now_add=True)
   date = models.DateTimeField("Дата", default=timezone.now)
   status = models.IntegerField(choices=STATUS, default=0)
-  image = models.ImageField("Фото", upload_to='post_images', blank=True)
+  image = models.ImageField("Фото", upload_to='post_images', blank=True, default="default.png")
   views = models.IntegerField("Просмотры", default=0)
 
   def get_absolute_url(self):
     return reverse('post-detail', args=[self.slug])
-
-  def total_likes(self):
-    return self.likes.count()
 
   def __str__(self):
     return self.title

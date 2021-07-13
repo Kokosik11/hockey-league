@@ -8,6 +8,7 @@
     <title>UHL | Главная</title>
 
     <link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </head>
 <style>
@@ -114,18 +115,16 @@
 
             <section class="news">
                 <h2>Новости</h2>
-                <div class="news-content">
-                    {% for post in posts %}
+                <div class="news-content" id="posts-box">
                     <div class="news-block">
-                        <img src="/pictures/news-1.png" alt="news photo">
-                        <div><span><a href="{{ post.get_absolute_url }}" id="more">Читать</a></span></div>
-                        <h3 class="news-heading">{{ post.title }}</h3>   
                     </div>
-                    {% endfor %}
                 </div>
-                <button class="more-news">
+                <div id="spinner-box" class="not-visible">
+                    <img src="/pictures/Iphone-spinner-2.gif" alt="gif: spinner">
+                </div>
+                <button class="more-news" id="loading-box">
                     <div class="btn-icon"><span class="iconify" data-inline="false" data-icon="ant-design:cloud-sync-outlined"></span></div>
-                    <span>Загрузить ещё</span>
+                    <span id="load-btn">Загрузить ещё</span>
                 </button>
             </section>
 
@@ -253,5 +252,6 @@
     </article>
 
     <script src="{% static 'mainpage/js/schedule.js' %}"></script>
+    <script src="{% static 'mainpage/js/main.js' %}"></script>
 </body>
 </html>

@@ -700,3 +700,6 @@ h1 {
 .to-up img {
   margin-top: 10px;
 }
+.not-visible {
+  display: none;
+}
