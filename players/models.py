@@ -17,6 +17,7 @@ class Player(models.Model):
    age = models.PositiveSmallIntegerField('Возраст', blank=True, default=20)
    captain = models.BooleanField('Капитан', default=False)
    is_reserve = models.BooleanField("Запасной", default=False)
+   number = models.PositiveSmallIntegerField("Номер игрока", default=0)
 
    def __str__(self):
       return self.surname

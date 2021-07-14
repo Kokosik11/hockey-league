@@ -51,14 +51,16 @@
                     <div class="promo-capitan_label">Капитан</div>
                     <div class="promo-capitan_content">
                         <img src="/pictures/BY.svg" alt="BY icon">
-                        <div>Андрей Гаврилов</div>
+                        {% for player in captain %}
+                        <div>{{ player.name }} {{ player.surname }}</div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="promo-trainer">
                     <div class="promo-trainer_label">Тренер</div>
                     <div class="promo-trainer_content">
                         <img src="/pictures/RU.svg" alt="RU icon">
-                        <div>Андрей Кордобин</div>
+                        <div>{{ team.trainer }}</div>
                     </div>
                 </div>
             </div>
@@ -102,54 +104,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for player in players %}
                     <tr class="teamlist-row">
                         <td>
                             <div class="flex-line">
-                                <div class="person-year">25</div>
+                                <div class="person-year">{{ player.number }}</div>
                                 <img class="table-avatar" src="/pictures/avatar.svg" alt="Image: Avatar">
                             </div>
                         </td>
                         <td>
                             <div class="flex-line">
                                 <img class="table-country" src="/pictures/BY.svg" alt="BY icon">
-                                <div class="person-name">Артем Иванов</div>
+                                <div class="person-name">{{ player.name }} {{ player.surname }}</div>
                             </div>
                         </td>
-                        <td>19.12.2001</td>
-                        <td>ВР</td>
+                        <td>{{ player.date_of_birth }}</td>
+                        <td>{{ player.position }}</td>
                     </tr>
-                    <tr class="teamlist-row">
-                        <td>
-                            <div class="flex-line">
-                                <div class="person-year">25</div>
-                                <img class="table-avatar" src="/pictures/avatar.svg" alt="Image: Avatar">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="flex-line">
-                                <img class="table-country" src="/pictures/BY.svg" alt="BY icon">
-                                <div class="person-name">Артем Иванов</div>
-                            </div>
-                        </td>
-                        <td>19.12.2001</td>
-                        <td>ВР</td>
-                    </tr>
-                    <tr class="teamlist-row">
-                        <td>
-                            <div class="flex-line">
-                                <div class="person-year">25</div>
-                                <img class="table-avatar" src="/pictures/avatar.svg" alt="Image: Avatar">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="flex-line">
-                                <img class="table-country" src="/pictures/BY.svg" alt="BY icon">
-                                <div class="person-name">Артем Иванов</div>
-                            </div>
-                        </td>
-                        <td>19.12.2001</td>
-                        <td>ВР</td>
-                    </tr>
+                    {% endfor %%}
                 </tbody>
 
             </table>
@@ -174,66 +146,23 @@
             </thead>
 
             <tbody>
+                {% for match in matches %}
                 <tr class="matches-row win">
                     <td class="team-name_win">
                         <div class="flex-line">
-                            <img class="rival-logo" src="/pictures/4639021344470c8814e9f799073924a5 1.png" alt="">
-                            <div class="team-name">{{ team.name }}</div>
+                            <img class="rival-logo" src="{{ match.second_team.logo.url }}" alt="">
+                            <div class="team-name">{{ match.second_team }}</div>
                         </div>
                     </td>
                     <td>
                         <div class="person-name">Кубок грифонов</div>
                     </td>
                     <td>
-                        <time><span class="match-day">25.04.2021</span> | <span class="match-time">14:30</span></time>
+                        <time><span class="match-day">{{ match.date|date:"d.m.Y"  }}</span> | <span class="match-time">{{ match.date|date:"G:i" }}</span></time>
                     </td>
                     <td class="score">0-3</td>
                 </tr>
-                <tr class="matches-row lose">
-                    <td class="team-name_lose">
-                        <div class="flex-line">
-                            <img class="rival-logo" src="/pictures/4639021344470c8814e9f799073924a5 1.png" alt="">
-                            <div class="team-name">Барыс</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="person-name">Кубок грифонов</div>
-                    </td>
-                    <td>
-                        <time><span class="match-day">25.04.2021</span> | <span class="match-time">14:30</span></time>
-                    </td>
-                    <td class="score">3-1</td>
-                </tr>
-                <tr class="matches-row draw">
-                    <td class="team-name_draw">
-                        <div class="flex-line">
-                            <img class="rival-logo" src="/pictures/4639021344470c8814e9f799073924a5 1.png" alt="">
-                            <div class="team-name">Барыс</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="person-name">Кубок грифонов</div>
-                    </td>
-                    <td>
-                        <time><span class="match-day">25.04.2021</span> | <span class="match-time">14:30</span></time>
-                    </td>
-                    <td class="score">2-2</td>
-                </tr>
-                <tr class="matches-row win">
-                    <td class="team-name_win">
-                        <div class="flex-line">
-                            <img class="rival-logo" src="/pictures/4639021344470c8814e9f799073924a5 1.png" alt="">
-                            <div class="team-name">Барыс</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="person-name">Кубок грифонов</div>
-                    </td>
-                    <td>
-                        <time><span class="match-day">25.04.2021</span> | <span class="match-time">14:30</span></time>
-                    </td>
-                    <td class="score">0-3</td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </section>

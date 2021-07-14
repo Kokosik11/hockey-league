@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Team
+from players.models import Player
+from match.models import Match
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def teams(request):
@@ -22,12 +24,18 @@ def teams(request):
 
 
 def team_detail(request, slug):
-    team = get_object_or_404(Team, slug=slug)
-    team_object = Team.objects.get(slug=slug)
+   team = get_object_or_404(Team, slug=slug)
+   team_object = Team.objects.get(slug=slug)
+   players = team.player.all()
+   captain = team.player.filter(captain=True)
+   matches = team.home_team_matches.all()
 
-    context = {
-        'team': team,
-        'team_object': team_object,
+   context = {
+      'team': team,
+      'team_object': team_object,
+      'players': players,
+      'captain': captain,
+      'matches': matches,
     }
 
-    return render(request, 'teams/team-detail.html', context)
+   return render(request, 'teams/team-detail.html', context)
