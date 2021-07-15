@@ -2,12 +2,11 @@
 
 {% load static %}
 
-{% block title %}УХЛ | Грифоны{% endblock title %}
+{% block title %}УХЛ | {{ team.name }}{% endblock title %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
 <link rel="stylesheet" href="{% static 'teams/css/team-profile.css' %}">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 {% endblock head %}
 
@@ -37,7 +36,7 @@
                     </div>
                 </div>
                 <div class="promo-country">
-                    <img src="/pictures/BY.svg" alt="BY icon">
+                    <img src="{{ team.country.flag }}" alt="BY icon">
                     <div>{{ team.location }}</div>
                 </div>
                 <div class="promo-year">
@@ -52,7 +51,7 @@
                     <div class="promo-capitan_content">
                         {% for player in captain %}
                         <img src="{{ player.citizenship.flag }}" alt="BY icon">
-                        <div>{{ player.name }} {{ player.surname }}</div>
+                        <div><a href="{{ player.get_absolute_url }}">{{ player.name }} {{ player.surname }}</a></div>
                         {% endfor %}
                     </div>
                 </div>
@@ -114,10 +113,10 @@
                         <td>
                             <div class="flex-line">
                                 <img class="table-country" src="{{ player.citizenship.flag }}" alt="BY icon">
-                                <div class="person-name">{{ player.name }} {{ player.surname }}</div>
+                                <div class="person-name"><a href="{{ player.get_absolute_url }}">{{ player.name }} {{ player.surname }}</a></div>
                             </div>
                         </td>
-                        <td>{{ player.date_of_birth }}</td>
+                        <td>{{ player.date_of_birth|date:"d.m.Y" }}</td>
                         <td>{{ player.position }}</td>
                     </tr>
                     {% endfor %%}

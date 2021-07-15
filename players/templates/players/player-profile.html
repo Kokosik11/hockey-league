@@ -1,0 +1,109 @@
+{% extends 'mainpage/base.html' %}
+
+{% load static %}
+
+{% block title %}УХЛ | {{ player.name }} {{ player.surname }}{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'players/css/components.css' %}">
+<link rel="stylesheet" href="{% static 'players/css/players.css' %}">
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+{% endblock head %}
+
+{% block main %}
+    <main>
+        <article>
+            <section class="page-heading">
+                <h1>Объединённая Хоккейная Лига "Кубок Грифонов"</h1>
+            </section>
+        </article>
+
+        <section class="player">
+            <div class="player-info">
+                <div class="avatar">
+                    <img src="{{ player.avatar.url }}" alt="Avatar: Player avatar">
+                </div>
+                <div class="text-info">
+                    <h3>{{ player.name }} {{ player.surname }}</h3>
+                    <div class="player-stats">
+                        <div class="stats">
+                            <span class="bgspan games"><span class="title">Игры</span><span class="total">36</span></span>
+                            <span class="bgspan goalsnpass"><span class="title">Гол+пас</span><span class="total">1+6</span></span>
+                            <span class="bgspan deleted"><span class="title">Удаления</span><span class="total red">14</span></span>
+                            <span class="bgspan scores"><span class="title">Очки</span><span class="total">7</span></span>
+                        </div>
+                        <div class="full-stats">
+                            <div class="full-stats_title">Полная статистика</div>
+                        </div>
+                    </div>
+
+                    <div class="full-info">
+                        <div class="full-info_title">
+                            <div class="info-title born-title">Родился</div>
+                            <div class="info-title citizen-title">Гражданство</div>
+                            <div class="info-title club-title">Клуб</div>
+                            <div class="info-title hnw-title">Рост и вес</div>
+                        </div>
+                        <div class="full-info_content">
+                            <div class="info-content born-content">{{ player.date_of_birth }}<span class="separator">|</span>{{ player.age }} лет</div>
+                            <div class="info-content itizen-content"><img src="{{ player.citizenship.flag }}"> {{ player.citizenship }}</div>
+                            <div class="info-content club-content"><img src="{{ player.team.country.flag }}"> {{ player.team }}<span class="separator">|</span>Нападающий</div>
+                            <div class="info-content hnw-content">{{ player.height }}<span class="separator">|</span>{{ player.weight }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-table">
+                    <table width="490px">
+                        <thead>
+                            <tr>
+                                <th>Сезон</th>
+                                <th>Команда</th>
+                                <th class="stat">М</th>
+                                <th class="stat">Г</th>
+                                <th class="stat">П</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="teamlist-row">
+                                <td>2020/2021</td>
+                                <td>Грифоны</td>
+                                <td>36</td>
+                                <td>1</td>
+                                <td>6</td>
+                            </tr>
+
+                            <tr class="teamlist-row">
+                                <td>2019/2020</td>
+                                <td>Грифоны</td>
+                                <td>20</td>
+                                <td>9</td>
+                                <td>8</td>
+                            </tr>
+
+                            <tr class="teamlist-row">
+                                <td>2018/2019</td>
+                                <td>Барыс</td>
+                                <td>17</td>
+                                <td>4</td>
+                                <td>2</td>
+                            </tr>
+
+                            <tr class="teamlist-row">
+                                <td>2017/2018</td>
+                                <td>Грифоны</td>
+                                <td>15</td>
+                                <td>1</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+{% endblock main %}

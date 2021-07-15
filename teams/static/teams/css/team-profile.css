@@ -217,6 +217,10 @@ td .flex-line {
   align-items: center;
 }
 
+.person-year {
+  min-width: 16px;
+}
+
 table tbody tr {
   background: #2E2D2D;
   text-align: center;
@@ -341,4 +345,22 @@ select option {
   cursor: pointer;
   transform: rotateZ(180deg);
   transition: transform .5s;
+}
+.person-name a {
+  text-decoration: none;
+  color: #858585;
+  transition: 0.3s ease;
+}
+.person-name a:hover {
+  border-bottom: 1px solid #858585;
+  transition: 0.3s ease;
+}
+.promo-capitan_content div a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s ease;
+}
+.promo-capitan_content div a:hover {
+  border-bottom: 1px solid #fff;
+  transition: 0.3s ease;
 }

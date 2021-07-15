@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from teams.models import Team
+from django.urls import reverse
 from django_countries.fields import CountryField
 
 class Player(models.Model):
@@ -19,6 +20,9 @@ class Player(models.Model):
    captain = models.BooleanField('Капитан', default=False)
    is_reserve = models.BooleanField("Запасной", default=False)
    number = models.PositiveSmallIntegerField("Номер игрока", default=0)
+
+   def get_absolute_url(self):
+      return reverse('player-detail', args=[self.slug])
 
    def __str__(self):
       return self.surname
