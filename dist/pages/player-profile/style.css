@@ -53,7 +53,7 @@ main {
     flex-wrap: wrap;
     max-width: 340px;
     height: 118px;
-    /* justify-content: space-between; */
+    align-content: space-between;
 }
 
 .player-stats .stats .bgspan {
