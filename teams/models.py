@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from tinymce.models import HTMLField
+from django_countries.fields import CountryField
 
 class Trainer(models.Model):
    name = models.CharField('Имя', max_length=100)
@@ -10,6 +11,7 @@ class Trainer(models.Model):
    avatar = models.ImageField('Фото тренера', default='default.jpg', upload_to='trainer_images')
    date_of_birth = models.DateField("Дата рождения", default=timezone.now, blank=True)
    age = models.PositiveSmallIntegerField('Возраст', blank=True)
+   citizenship = CountryField("Гражданство", default="")
    slug = models.SlugField("Ссылка", max_length=130, unique=True, default='', help_text="ссылка на профиль тренера")
 
    def __str__(self):

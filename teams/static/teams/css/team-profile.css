@@ -89,6 +89,7 @@ main {
   color: white;
   font-size: 15px;
   margin-top: 8px;
+  align-items: center;
 }
 
 .promo-capitan_label,
@@ -251,6 +252,7 @@ table tbody tr {
 
 .matches {
   width: 698px;
+  display: none;
 }
 
 .rival-logo {
@@ -294,4 +296,49 @@ table tbody tr {
 
 .draw::after {
   background-color: #FFD234;
+}
+
+.selection {
+  position: relative;
+  margin: 86px auto 39px;
+  width: 230px;
+}
+
+select {
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  background-color: #1C1C1C;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 66px;
+  outline: none;
+  width: 100%;
+  height: 53px;
+  color: #909090;
+  cursor: pointer;
+  padding: 0 40px;
+}
+
+select option {
+  border: none;
+  padding: 30px 15px;
+}
+
+.arrow {
+  position: absolute;
+  right: 30px;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  transform: rotateZ(0);
+  transition: transform .5s;
+}
+
+.selection:hover .arrow,
+.arrow:hover {
+  cursor: pointer;
+  transform: rotateZ(180deg);
+  transition: transform .5s;
 }

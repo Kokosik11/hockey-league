@@ -28,14 +28,16 @@ def team_detail(request, slug):
    team_object = Team.objects.get(slug=slug)
    players = team.player.all()
    captain = team.player.filter(captain=True)
-   matches = team.home_team_matches.all()
+   home_matches = team.home_team_matches.all()
+   away_matches = team.away_team_matches.all()
 
    context = {
       'team': team,
       'team_object': team_object,
       'players': players,
       'captain': captain,
-      'matches': matches,
+      'away_matches': away_matches,
+      'home_matches': home_matches,
     }
 
    return render(request, 'teams/team-detail.html', context)

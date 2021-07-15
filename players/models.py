@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from teams.models import Team
+from django_countries.fields import CountryField
 
 class Player(models.Model):
    team = models.ForeignKey(Team, related_name="player", verbose_name="команда", on_delete=models.PROTECT, null=True, blank=True)
@@ -11,7 +12,7 @@ class Player(models.Model):
    slug = models.SlugField("Ссылка", max_length=130, unique=True, default='', help_text="ссылка на профиль игрока")
    height = models.PositiveSmallIntegerField('Рост', blank=True)
    weight = models.PositiveSmallIntegerField('Вес', blank=True)
-   citizenship = models.CharField('Гражданство', max_length=100)
+   citizenship = CountryField()
    position = models.CharField('Позиция', max_length=100, default='')
    date_of_birth = models.DateField("Дата рождения", default=timezone.now)
    age = models.PositiveSmallIntegerField('Возраст', blank=True, default=20)

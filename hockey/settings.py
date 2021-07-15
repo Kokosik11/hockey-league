@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'players.apps.PlayersConfig',
     'match.apps.MatchConfig',
     'ckeditor',
+    'django_countries',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
