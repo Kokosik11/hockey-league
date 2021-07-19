@@ -17,13 +17,6 @@ main {
     color: rgba(255, 255, 255, 0.43);
 }
 
-.page-heading .break-line {
-    width: 200px;
-    height: 3px;
-    background-color: #FF4957;
-    margin: 28px 0;
-}
-
 .teamlist {
     display: flex;
     flex-wrap: wrap;

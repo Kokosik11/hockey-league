@@ -18,10 +18,6 @@ main {
     color: rgba(255, 255, 255, 0.43);
 }
 
-.stat {
-    width: 47px;
-}
-
 .player-info {
     max-width: 957px;
     display: flex;
