@@ -87,9 +87,9 @@ WSGI_APPLICATION = 'hockey.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hockey',
-        'USER': 'root',
-        'PASSWORD': '2554963',
+        'NAME': 'hockey_new',
+        'USER': 'tim',
+        'PASSWORD': '2554963demidovT!',
         'PORT': 3306,
         'HOST': '127.0.0.1',
     }

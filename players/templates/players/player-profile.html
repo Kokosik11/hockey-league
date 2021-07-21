@@ -28,10 +28,10 @@
                     <h3>{{ player.name }} {{ player.surname }}</h3>
                     <div class="player-stats">
                         <div class="stats">
-                            <span class="bgspan games"><span class="title">Игры</span><span class="total">36</span></span>
-                            <span class="bgspan goalsnpass"><span class="title">Гол+пас</span><span class="total">1+6</span></span>
-                            <span class="bgspan deleted"><span class="title">Удаления</span><span class="total red">14</span></span>
-                            <span class="bgspan scores"><span class="title">Очки</span><span class="total">7</span></span>
+                            <span class="bgspan games"><span class="title">Игры</span><span class="total"></span></span>
+                            <span class="bgspan goalsnpass"><span class="title">Гол+пас</span><span class="total">{{ goals }} + {{ assists }}</span></span>
+                            <span class="bgspan deleted"><span class="title">Удаления</span><span class="total red">{{ removes }}</span></span>
+                            <span class="bgspan scores"><span class="title">Очки</span><span class="total">{{ points }}</span></span>
                         </div>
                         <div class="full-stats">
                             <div class="full-stats_title">Полная статистика</div>
@@ -47,8 +47,8 @@
                         </div>
                         <div class="full-info_content">
                             <div class="info-content born-content">{{ player.date_of_birth }}<span class="separator">|</span>{{ player.age }} лет</div>
-                            <div class="info-content itizen-content"><img src="{{ player.citizenship.flag }}"> {{ player.citizenship }}</div>
-                            <div class="info-content club-content"><img src="{{ player.team.country.flag }}"> {{ player.team }}<span class="separator">|</span>Нападающий</div>
+                            <div class="info-content itizen-content"><img src="{{ player.citizenship.flag }}"> {{ player.citizenship.name }}</div>
+                            <div class="info-content club-content"><img class="rival-logo" src="{{ player.team.logo.url }}"><a href="{{ player.team.get_absolute_url }}">{{ player.team }}</a><span class="separator">|</span>Нападающий</div>
                             <div class="info-content hnw-content">{{ player.height }}<span class="separator">|</span>{{ player.weight }}</div>
                         </div>
                     </div>

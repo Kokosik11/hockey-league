@@ -1,7 +1,6 @@
-from django.db import models
-from django.utils import timezone
-from teams.models import Team
 from players.models import Player
+from django.db import models
+from teams.models import Team
 
 class Match(models.Model):
   slug = models.SlugField("Ссылка", max_length=130, unique=True, default='', help_text="ссылка на матч")
@@ -18,20 +17,16 @@ class Match(models.Model):
     verbose_name = "Матч"
     verbose_name_plural = "Матчи"
 
-class PlayerMatchStatistics(models.Model):
-  player = models.ForeignKey(Player, related_name="match_statistics", verbose_name="игрок", on_delete=models.CASCADE, null=True, blank=True)
-  match = models.ForeignKey(Match, related_name="statistics", verbose_name="матч", on_delete=models.CASCADE, null=True, blank=True)
-  goals = models.IntegerField("Голы", blank=True)
-  assists = models.IntegerField("Ассисты", blank=True)
-  removes = models.IntegerField("Удаления", blank=True)
-
-  def points(self):
-    points = self.goals + self.assists
-    return points
+class Goals(models.Model):
+  match = models.ManyToManyField(Match, related_name="match", verbose_name="матч")
+  goals = models.IntegerField("Голы", default=0)
+  assists = models.IntegerField("Ассисты", default=0)
+  removes = models.IntegerField("Удаления", default=0)
+  player = models.OneToOneField(Player, on_delete=models.CASCADE, related_name="player", verbose_name="Игрок", default='')
 
   def __str__(self):
-    return self.player.surname
+      return f'{self.player.name} {self.player.surname} - результативное действие'
 
   class Meta:
-    verbose_name = "Статистика"
-    verbose_name_plural = "Статистики"
+    verbose_name = "Гол"
+    verbose_name_plural = "Голы"
