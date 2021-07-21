@@ -37,27 +37,6 @@ main {
     max-width: 150px;
 }
 
-.teamlist .team .team-btns {
-    display: flex;
-    align-items: flex-end;
-    margin-top: 15px;
-    width: 260px;
-    justify-content: space-between;
-}
-
-.team-btns button,
-.team-btns .score-circle {
-    background-color: #2E2D2D;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    outline: none;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25),
-                inset 0 -1px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
 .score-circle {
     width: 86px;
     height: 86px;
@@ -79,26 +58,6 @@ main {
 .team:first-child .score-circle .score {
     fill: rgba(255, 255, 255, 0.603);
     color: #1a1a1a;
-}
-
-.small-btn {
-    width: 53px;
-    height: 53px;
-    transition: .25s;
-}
-
-.small-btn:hover {
-    background-color: #292828;
-    cursor: pointer;
-    transition: .25s;
-}
-
-.small-btn img {
-    width: 29px;
-}
-
-.small-btn:first-child img {
-    width: 19px;
 }
 
 .team .profile {

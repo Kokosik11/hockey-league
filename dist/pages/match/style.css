@@ -1,0 +1,285 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-heading {
+    margin-top: 169px;
+    margin-bottom: 86px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page-heading h1 {
+    max-width: 880px;
+    color: rgba(255, 255, 255, 0.43);
+}
+
+.afisha {
+    width: 640px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.team img {
+    max-width: 200px;
+}
+
+.team .team-name {
+    margin: 29px 0 16px;
+}
+
+.match-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 240px;
+    border-bottom: 3px solid #FF4957;
+}
+
+.match-status .progress {
+    color: #5E5F5E;
+    font-size: 18px;
+}
+
+.scores {
+    color: #FF4957;
+    font-size: 72px;
+}
+
+.live-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.islive {
+    color: #FF4957;
+    font-size: 24px;
+}
+
+.afisha-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.afisha-details time {
+    color: #707070;
+    font-size: 24px;
+}
+
+.geolocation {
+    color: #FFFFFF;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.geolocation .geo-title {
+    margin-left: 8px;
+}
+
+.team-structures {
+    display: flex;
+    width: 960px;
+    justify-content: space-between;
+}
+
+.structures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 62px;
+}
+
+.structures h2, .feed h2 {
+    border-bottom: 4px solid #FF4957;
+    margin-bottom: 24px;
+}
+
+.struct h3 {
+    color: #858585;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 26px 0;
+}
+
+.start-struct h3 {
+    color: #FFFFFF;
+}
+
+.struct .player::before {
+    content: "";
+    width: 7px;
+    height: 84%;
+    top: 8%;
+    left: 0;
+    background-color: #858585;
+    border-radius: 8px;
+}
+
+.start-struct .player::before {
+    background-color: #FF4957;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+
+.struct .player {
+    background-color: #2E2D2D;
+    width: 409px;
+    height: 55px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    color: #858585;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.player-country {
+    height: 15px;
+    margin: 0 20px 0 8px;
+}
+
+.player-role {
+    margin-right: 16px;
+}
+
+.struct .player:last-child {
+    margin-bottom: 0;
+}
+
+.trainer {
+    justify-content: center;
+}
+
+.feed, .feed-events {
+    margin-top: 90px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event-interval {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.interval-title {
+    position: relative;
+    width: 213px;
+    height: 57px;
+    background-color: #2E2D2D;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 22px;
+    margin-bottom: 129px;
+}
+
+.interval-title::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 119px;
+    background-color: #2E2D2D;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.event {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 129px;
+}
+
+.event::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 119px;
+    background-color: #2E2D2D;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.event-time {
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    background-color: #2E2D2D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #858585;
+    font-size: 22px;
+}
+
+.first-team_event .event-info {
+    position: absolute;
+    width: 250px;
+    right: calc(100% + 15px);
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+.second-team_event .event-info {
+    position: absolute;
+    width: 250px;
+    left: calc(100% + 15px);
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+.event-info {
+    color: #858585;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.event-type {
+    color: #FF4957;
+}
+
+.event-details {
+    font-size: 16px;
+}
+
+.interval-close {
+    margin-top: 10px;
+}
+
+.interval-close .interval-title::after {
+    visibility: hidden;
+}
+
+.interval-close .interval-title {
+    background-color: #FF4957;
+}
