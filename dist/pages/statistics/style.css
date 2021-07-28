@@ -1,0 +1,109 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-heading {
+    margin-top: 169px;
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page-heading h1 {
+    max-width: 880px;
+    color: rgba(255, 255, 255, 0.43);
+}
+
+.top-for-season {
+    position: relative;
+    display: flex;
+    max-width: 1200px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 59px;
+}
+
+.top-for-season_heading h2{
+    color: #FFFFFF;
+}
+
+.top-for-season_content {
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.top-for-season_player-card .card_content,
+.top-for-season_player-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 368px;
+}
+
+.card_content {
+    background-color: #1C1C1C;
+    padding: 23px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card_content .avatar img {
+    max-width: 211px;
+}
+
+.card_heading {
+    margin-bottom: 34px;
+}
+
+.card_heading h3 {
+    color: #ff4957;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.card_content .player-name {
+    color: #8B8B8B;
+    font-size: 25px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.card_content .score {
+    color: #ff4957;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    margin: 8px 0 16px;
+}
+
+.card_content .score .score-value {
+    color: #FFFFFF;
+}
+
+.team-btns {
+    display: flex;
+    width: 137px;
+    justify-content:space-between;
+    margin-bottom: 14px;
+}
+
+.horizontal-line {
+    position: absolute;
+    border-radius: 8px;
+    width: 969px;
+    height: 6px;
+    left: 50%;
+    bottom: 0;
+    background-color: #454545;
+    transform: translateX(-50%)
+}
+
+.statistic {
+    width: 851px;
+}
