@@ -106,4 +106,88 @@ main {
 
 .statistic {
     width: 851px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.select-type {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 53px;
+    margin-top: 56px;
+    background-color: #151515;
+    border-radius: 8px;
+}
+
+.select-field {
+    width: 736px;
+    display: flex;
+    justify-content:space-between;
+    color: #818181;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.player-type {
+    transition: .25s;
+}
+
+.player-type:hover, .select-field .active  {
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.select-type .line {
+    position: absolute;
+    width: 155px;
+    height: 2px;
+    background-color: #ff4957;
+    bottom: 2px;
+    left: calc(40px);
+    border-radius: 8px;
+    transition: .25s;
+}
+
+.table {
+    display: none;
+    margin-top: 80px;
+}
+
+.active-table {
+    display: block;
+}
+
+.person-profile {
+    width: 200px;
+}
+
+.person-number {
+    width: 250px;
+}
+
+.team-btns {
+    width: 57px;
+    margin: 0;
+}
+
+.team-btns button {
+    width: 27px;
+    height: 27px;
+}
+
+.team-btns button img {
+    width: 15px;
+    height: 13px;
+}
+
+.table-avatar {
+    margin: 0 16px;
+}
+
+.person-name {
+    margin-left: 7px;
 }

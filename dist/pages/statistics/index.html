@@ -136,20 +136,88 @@
             </div>
 
             <div class="select-type">
-                <div class="player-type">Бомбардиры</div>
-                <div class="player-type">Снайпер</div>
-                <div class="player-type">Защитники</div>
-                <div class="player-type">Вратари</div>
-                <div class="player-type">Штрафы</div>
+                <div class="select-field">
+                    <div class="player-type active">Бомбардиры</div>
+                    <div class="player-type">Снайпер</div>
+                    <div class="player-type">Защитники</div>
+                    <div class="player-type">Вратари</div>
+                    <div class="player-type">Штрафы</div>
+                </div>
+
+                <div class="line"></div>
             </div>
 
-            <div class="table">
-                <table width="100%">
+            <!-- Для бомбардиров-->
+
+            <div class="table active-table">
+                <table width="557px">
                     <thead>
                         <tr>
-                            <th>Номер и фото</th>
-                            <th>Игрок</th>
-                            <th>Очки</th>
+                            <th class="person-profile">Номер и фото</th>
+                            <th class="person-number">Игрок</th>
+                            <th class="person-score">Очки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="teamlist-row">
+                            <td>
+                                <div class="flex-line">
+                                    <div class="person-year">25</div>
+                                    <img class="table-avatar" src="../../assets/imgs/avatar.svg" alt="Image: Avatar">
+                                    <div class="team-btns">
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/user-profile.svg" alt="Icon: User profile">
+                                        </button>
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/team.png" alt="Icon: Team profile">
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex-line">
+                                    <img class="table-country" src="../../assets/imgs/BY.svg" alt="BY icon">
+                                    <div class="person-name">Артем Иванов</div>
+                                </div>
+                            </td>
+                            <td>99</td>
+                        </tr>
+                        <tr class="teamlist-row">
+                            <td>
+                                <div class="flex-line">
+                                    <div class="person-year">25</div>
+                                    <img class="table-avatar" src="../../assets/imgs/avatar.svg" alt="Image: Avatar">
+                                    <div class="team-btns">
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/user-profile.svg" alt="Icon: User profile">
+                                        </button>
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/team.png" alt="Icon: Team profile">
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex-line">
+                                    <img class="table-country" src="../../assets/imgs/BY.svg" alt="BY icon">
+                                    <div class="person-name">Артем Иванов</div>
+                                </div>
+                            </td>
+                            <td>99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Для снайперов-->
+
+            <div class="table">
+                <table width="557px">
+                    <thead>
+                        <tr>
+                            <th class="person-profile">Номер и фото</th>
+                            <th class="person-number">Игрок</th>
+                            <th class="person-score">Очки</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -177,9 +245,172 @@
                             <td>99</td>
                         </tr>
                     </tbody>
-
                 </table>
             </div>
+
+            <!-- Для защитников-->
+
+            <div class="table">
+                <table width="557px">
+                    <thead>
+                        <tr>
+                            <th class="person-profile">Номер и фото</th>
+                            <th class="person-number">Игрок</th>
+                            <th class="person-score">Очки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="teamlist-row">
+                            <td>
+                                <div class="flex-line">
+                                    <div class="person-year">25</div>
+                                    <img class="table-avatar" src="../../assets/imgs/avatar.svg" alt="Image: Avatar">
+                                    <div class="team-btns">
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/user-profile.svg" alt="Icon: User profile">
+                                        </button>
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/team.png" alt="Icon: Team profile">
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex-line">
+                                    <img class="table-country" src="../../assets/imgs/BY.svg" alt="BY icon">
+                                    <div class="person-name">Артем Иванов</div>
+                                </div>
+                            </td>
+                            <td>99</td>
+                        </tr>
+                        <tr class="teamlist-row">
+                            <td>
+                                <div class="flex-line">
+                                    <div class="person-year">25</div>
+                                    <img class="table-avatar" src="../../assets/imgs/avatar.svg" alt="Image: Avatar">
+                                    <div class="team-btns">
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/user-profile.svg" alt="Icon: User profile">
+                                        </button>
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/team.png" alt="Icon: Team profile">
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex-line">
+                                    <img class="table-country" src="../../assets/imgs/BY.svg" alt="BY icon">
+                                    <div class="person-name">Артем Иванов</div>
+                                </div>
+                            </td>
+                            <td>99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Для вратарей-->
+
+            <div class="table">
+                <table width="557px">
+                    <thead>
+                        <tr>
+                            <th class="person-profile">Номер и фото</th>
+                            <th class="person-number">Игрок</th>
+                            <th class="person-score">Очки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="teamlist-row">
+                            <td>
+                                <div class="flex-line">
+                                    <div class="person-year">25</div>
+                                    <img class="table-avatar" src="../../assets/imgs/avatar.svg" alt="Image: Avatar">
+                                    <div class="team-btns">
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/user-profile.svg" alt="Icon: User profile">
+                                        </button>
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/team.png" alt="Icon: Team profile">
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex-line">
+                                    <img class="table-country" src="../../assets/imgs/BY.svg" alt="BY icon">
+                                    <div class="person-name">Артем Иванов</div>
+                                </div>
+                            </td>
+                            <td>99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Для штрафов-->
+
+            <div class="table">
+                <table width="557px">
+                    <thead>
+                        <tr>
+                            <th class="person-profile">Номер и фото</th>
+                            <th class="person-number">Игрок</th>
+                            <th class="person-score">Очки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="teamlist-row">
+                            <td>
+                                <div class="flex-line">
+                                    <div class="person-year">25</div>
+                                    <img class="table-avatar" src="../../assets/imgs/avatar.svg" alt="Image: Avatar">
+                                    <div class="team-btns">
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/user-profile.svg" alt="Icon: User profile">
+                                        </button>
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/team.png" alt="Icon: Team profile">
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex-line">
+                                    <img class="table-country" src="../../assets/imgs/BY.svg" alt="BY icon">
+                                    <div class="person-name">Артем Иванов</div>
+                                </div>
+                            </td>
+                            <td>99</td>
+                        </tr>
+                        <tr class="teamlist-row">
+                            <td>
+                                <div class="flex-line">
+                                    <div class="person-year">25</div>
+                                    <img class="table-avatar" src="../../assets/imgs/avatar.svg" alt="Image: Avatar">
+                                    <div class="team-btns">
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/user-profile.svg" alt="Icon: User profile">
+                                        </button>
+                                        <button class="small-btn">
+                                            <img src="../../assets/imgs/team.png" alt="Icon: Team profile">
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="flex-line">
+                                    <img class="table-country" src="../../assets/imgs/BY.svg" alt="BY icon">
+                                    <div class="person-name">Артем Иванов</div>
+                                </div>
+                            </td>
+                            <td>99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </section>
     </main>
 
@@ -248,6 +479,6 @@
         <img src="../../assets/imgs/lab.svg" alt="lab">
     </article>
 
-    <script src="../../assets/scripts/tpSelector.js"/>
+    <script src="../../assets/scripts/typeSelector.js"/>
 </body>
 </html>
