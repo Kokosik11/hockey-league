@@ -129,3 +129,108 @@ main {
     border-radius: 8px;
     overflow: hidden;
 }
+
+.feedback {
+    display: flex; 
+    width: 100%;
+    justify-content: center;
+    margin-top: 132px;
+}
+
+.feedback-content {
+    position: relative;
+    background-color: #282828;
+    padding: 71px 86px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.feedback-content h3 {
+    font-weight: 400;
+    font-size: 30px;
+    color: #FF9CA4;
+}
+
+.feedback-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-content form input {
+    width: 374px;
+    height: 46px;
+    background-color: #343434;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    padding: 0 32px;
+    color: #878787;
+    font-size: 16px;
+    transition: .25s;
+}
+
+.feedback-content form input::placeholder {
+    color: #4E4E4E;
+}
+
+.feedback-content form input:hover,
+.feedback-content form input:active,
+.feedback-content form input:focus {
+    background-color: rgb(44, 44, 44);
+}
+
+.feedback-content form label {
+    font-weight: normal;
+    font-size: 20px;
+    color: #858585;
+    margin: 32px 0 15px;
+}
+
+.feedback-content form button {
+    width: 169px;
+    height: 46px;
+    outline: none;
+    border: none;
+    margin-top: 32px;
+    background-color: #343434;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: -0.025em;
+
+    color: #919191;
+    transition: .25s;
+}
+
+.feedback-content form button:hover,
+.feedback-content form button:active,
+.feedback-content form button:focus {
+    background-color: #3f3f3f;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+    
+}
+
+.feedback-content::before {
+    position: absolute;
+    content: '';
+    width: 129px;
+    height: 129px;
+    border-radius: 50%;
+    background-color: #454545;
+    top: -30px;
+    right: -30px;
+    z-index: 10;
+}
+
+.feedback-content::after {
+    position: absolute;
+    content: '';
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background-color: #ff717dc9;
+    top: 50px;
+    right: 50px;
+    z-index: 11;
+}
