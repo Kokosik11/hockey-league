@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UHL | Главная</title>
+
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/components.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <img alt="logo" src="../../assets/imgs/logo.png">
+        <nav class="pages">
+            <ul>
+                <li><a href="/dist/index.html">Главная</a></li>
+                <li><a class="active" href="/">Команды</a></li>
+                <li><a href="/">Таблица</a></li>
+                <li><a href="/">Статистика</a></li>
+                <li><a href="/">Галерея</a></li>
+                <li><a href="/">Контакты</a></li>
+            </ul>
+        </nav>
+        <nav class="social-links">
+            <ul>
+                <li><span class="iconify" data-inline="false" data-icon="entypo-social:vk-with-circle"></span></li>
+                <li><span class="iconify" data-inline="false" data-icon="akar-icons:facebook-fill"></span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-heading">
+            <h1>Объединённая Хоккейная Лига "Кубок Грифонов"</h1>
+            <div class="break-line"></div>
+            <h2>Контакты</h2>
+        </section>
+
+        <section class="contact-details">
+            <div class="contact-info">
+                <div class="info-block">
+                
+                    <div class="contact-block">
+                        <h3>Контактная информация</h3>
+                        <div class="shortline"></div>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <img class="phone-icon" src="../../assets/imgs/phone.svg" alt="phone">
+                                    <a href="tel:+375291234567">+375291234567</a>
+                                </li>
+                                <li>
+                                    <img class="mail-icon" src="../../assets/imgs/mail.svg" alt="mail">
+                                    <a href="mailto:hockey@hockey.hoc">hockey@hockey.hoc</a>
+                                </li>
+                                <li>
+                                    <img class="geo-icon" src="../../assets/imgs/geo.svg" alt="geo">
+                                    <a target="_blank" href="https://yandex.by/maps/157/minsk/?from=api-maps&ll=27.487436%2C53.936041&mode=poi&origin=jsapi_2_1_79&poi%5Bpoint%5D=27.481616%2C53.936160&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1160110747&z=15">Минск Арена (большая площадка)</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="social-block">
+                        <nav class="social-links">
+                            <ul>
+                                <li><span class="iconify" data-inline="false" data-icon="entypo-social:vk-with-circle"></span></li>
+                                <li><span class="iconify" data-inline="false" data-icon="akar-icons:facebook-fill"></span></li>
+                                <li><span class="iconify" data-inline="false" data-icon="akar-icons:instagram-fill"></span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div id="map" style="width: 477px; height: 301px;"></div>
+        </section>
+
+        <section class="feedback">
+            <div class="feedback-content">
+                <h3>Свяжитесь с нами!</h3>
+                <form>
+                    <label for="phone">Как вас зовут?</label>
+                    <input type="text" id="name" class="name" name="name" placeholder="Введите ваше имя...">
+                    <label for="phone">Как вас зовут?</label>
+                    <input type="text" id="phone" class="phone" name="phone" placeholder="Введите ваш номер телефона...">
+
+                    <button>Отправить</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <section class="prefooter">
+            <div class="prefooter-heading">Хоккей — единственная игра, где еще можно увидеть, как дерутся двое белых парней.</div>
+        </section>
+
+        <section class="footer">
+            <div class="footer-content">
+                <img src="../../assets/imgs/logo.png" alt="logo">
+
+                <div class="footer-links">
+                    <div class="footer-link">
+                        <h3>Чемпионат</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Таблица</a></li>
+                                <li><a href="#">Статистика</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer-link">
+                        <h3>Команды</h3>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Составы</a></li>
+                                <li><a href="#">Галерея</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer-link">
+                        <h3>Контакты</h3>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <img class="phone-icon" src="../../assets/imgs/phone.svg" alt="phone">
+                                    <a href="tel:+375291234567">+375291234567</a>
+                                </li>
+                                <li>
+                                    <img class="mail-icon" src="../../assets/imgs/mail.svg" alt="mail">
+                                    <a href="mailto:hockey@hockey.hoc">hockey@hockey.hoc</a>
+                                </li>
+                                <li>
+                                    <img class="geo-icon" src="../../assets/imgs/geo.svg" alt="geo">
+                                    <a target="_blank" href="https://yandex.by/maps/157/minsk/?from=api-maps&ll=27.487436%2C53.936041&mode=poi&origin=jsapi_2_1_79&poi%5Bpoint%5D=27.481616%2C53.936160&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1160110747&z=15">Минск Арена (большая площадка)</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#top">
+                <div class="to-up">
+                    <img src="../../assets/imgs/to-up.svg" alt="top-up">
+                </div>
+            </a>
+
+        </section>
+    </footer>
+    <article class="developers">
+        <span class="c">© 2021</span>
+        <a href="https://lab.reu.by/" target="_blank" class="plekhanov-dev">Сайт разработан Лабораторией им. Плеханова</a>
+        <img src="../../assets/imgs/lab.svg" alt="lab">
+    </article>
+
+
+    <script type="text/javascript">
+        ymaps.ready(init);
+
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [53.936041, 27.487436],
+                zoom: 14,
+                controls: [
+                    'zoomControl', // Ползунок масштаба
+                    'fullscreenControl', // Полноэкранный режим
+                ]
+            });
+
+            var myPlacemark = new ymaps.Placemark([53.936, 27.4815], {
+                hintContent: 'Минск Арена (большая площадка)',
+                balloonContent: 'Минск Арена (большая площадка)'
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+
+    <script src="../../assets/scripts/typeSelector.js"/>
+</body>
+</html>

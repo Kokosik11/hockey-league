@@ -1,0 +1,131 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-heading {
+    margin-top: 169px;
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page-heading h1 {
+    max-width: 880px;
+    color: rgba(255, 255, 255, 0.43);
+}
+
+
+.info-block nav ul {
+    list-style: none;
+}
+
+.info-block nav ul li a {
+    text-decoration: none;
+    color: #878787;
+}
+
+.contact-details {
+    width: 1049px;
+    height: 417px;
+    background-color: #282828;
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contact-info {
+    position: relative;
+    width: 341px;
+    height: 301px;
+    background-color: #343434;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 28px 28px 33px;
+    overflow: hidden;
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+} 
+
+.contact-info h3 {
+    font-size: 23px;
+    font-weight: 400;
+    color: #858585;
+}
+
+.shortline {
+    width: 127px;
+    height: 4px;
+    background-color: #454545;
+    border-radius: 8px;
+    margin-top: 4px;
+    margin-bottom: 26px;
+}
+
+.contact-block nav ul li {
+    display: flex;
+}
+
+.contact-block nav ul li a {
+    margin-left: 17px;
+}
+
+.contact-block nav ul{
+    display: flex;
+    flex-direction: column;
+    height: 97px;
+    justify-content: space-between;
+}
+
+.social-block .social-links ul {
+    display: flex;
+    width: 90px;
+    justify-content: space-between;
+}
+
+.social-block .social-links ul li {
+    margin: 0;
+}
+
+.social-block .social-links ul li svg{
+    width: 20px;
+    height: 20px;
+}
+
+.contact-info::before {
+    position: absolute;
+    content: '';
+    width: 129px;
+    height: 129px;
+    border-radius: 50%;
+    background-color: #454545;
+    bottom: -30px;
+    right: -30px;
+    z-index: 10;
+}
+
+.contact-info::after {
+    position: absolute;
+    content: '';
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    background-color: #ff717dc9;
+    bottom: 50px;
+    right: 50px;
+    z-index: 11;
+}
+
+#map > ymaps {
+    border-radius: 8px;
+    overflow: hidden;
+}
