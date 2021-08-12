@@ -4,11 +4,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('', include('mainpage.urls')),
     path('teams/', include('teams.urls')),
     path('players/', include('players.urls')),
     path('match/', include('match.urls')),
+    path('contacts/', include('contacts.urls')),
     path('tinymce/', include('tinymce.urls')),
 ]
 

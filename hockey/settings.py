@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'teams.apps.TeamsConfig',
     'players.apps.PlayersConfig',
     'match.apps.MatchConfig',
+    'contacts.apps.ContactsConfig',
+    'statistic.apps.StatisticConfig',
     'ckeditor',
     'django_countries',
 ]
@@ -87,8 +89,8 @@ WSGI_APPLICATION = 'hockey.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hockey_new',
-        'USER': 'tim',
+        'NAME': 'hockey_data',
+        'USER': 'hockeyad',
         'PASSWORD': '2554963demidovT!',
         'PORT': 3306,
         'HOST': '127.0.0.1',
@@ -139,3 +141,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
 MEDIA_URL = '/pictures/'
+
+GRAPPELLI_SWITCH_USER = True
+
+GRAPPELLI_ADMIN_TITLE = "Админ-панель"

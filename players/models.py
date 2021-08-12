@@ -4,6 +4,7 @@ from teams.models import Team
 from django.urls import reverse
 from django_countries.fields import CountryField
 
+
 class Player(models.Model):
    team = models.ForeignKey(Team, related_name="player", verbose_name="команда", on_delete=models.PROTECT, null=True, blank=True)
    avatar = models.ImageField('Фото игрока', default='default.jpg', upload_to='player_images')

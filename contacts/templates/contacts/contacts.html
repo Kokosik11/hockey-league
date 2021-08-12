@@ -1,0 +1,103 @@
+{% extends 'mainpage/base.html' %}
+
+{% load static %}
+
+{% block title %}УХЛ | Контакты{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'contacts/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'players/css/components.css' %}">
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+{% endblock head %}
+
+{% block main %}
+  <main>
+      <section class="page-heading">
+          <h1>Объединённая Хоккейная Лига "Кубок Грифонов"</h1>
+          <div class="break-line"></div>
+          <h2>Контакты</h2>
+      </section>
+
+      <section class="contact-details">
+          <div class="contact-info">
+              <div class="info-block">
+              
+                  <div class="contact-block">
+                      <h3>Контактная информация</h3>
+                      <div class="shortline"></div>
+                      <nav>
+                          <ul>
+                              <li>
+                                  <img class="phone-icon" src="/pictures/phone.svg" alt="phone">
+                                  <a href="tel:+375291234567">+375291234567</a>
+                              </li>
+                              <li>
+                                  <img class="mail-icon" src="/pictures/email.svg" alt="mail">
+                                  <a href="mailto:hockey@hockey.hoc">hockey@hockey.hoc</a>
+                              </li>
+                              <li>
+                                  <img class="geo-icon" src="/pictures/Location.svg" alt="geo">
+                                  <a target="_blank" href="https://yandex.by/maps/157/minsk/?from=api-maps&ll=27.487436%2C53.936041&mode=poi&origin=jsapi_2_1_79&poi%5Bpoint%5D=27.481616%2C53.936160&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1160110747&z=15">Минск Арена (большая площадка)</a>
+                              </li>
+                          </ul>
+                      </nav>
+                  </div>
+
+                  <div class="social-block">
+                      <nav class="social-links">
+                          <ul>
+                              <li><span class="iconify" data-inline="false" data-icon="entypo-social:vk-with-circle"></span></li>
+                              <li><span class="iconify" data-inline="false" data-icon="akar-icons:facebook-fill"></span></li>
+                              <li><span class="iconify" data-inline="false" data-icon="akar-icons:instagram-fill"></span></li>
+                          </ul>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+
+          <div id="map" style="width: 477px; height: 301px;"></div>
+      </section>
+
+      <section class="feedback">
+          <div class="feedback-content">
+              <h3>Свяжитесь с нами!</h3>
+              <form method="POST">
+                  {% csrf_token %}
+                  <label for="phone">Как вас зовут?</label>
+                  {{ form.name }}
+                  <label for="phone">Ваш номер телефона</label>
+                  {{ form.phone }}
+
+                  <button>Отправить</button>
+              </form>
+          </div>
+      </section>
+  </main>
+
+  <script type="text/javascript">
+    ymaps.ready(init);
+
+    function init() {
+        var myMap = new ymaps.Map("map", {
+            center: [53.936041, 27.487436],
+            zoom: 14,
+            controls: [
+                'zoomControl', // Ползунок масштаба
+                'fullscreenControl', // Полноэкранный режим
+            ]
+        });
+
+        var myPlacemark = new ymaps.Placemark([53.936, 27.4815], {
+            hintContent: 'Минск Арена (большая площадка)',
+            balloonContent: 'Минск Арена (большая площадка)'
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+</script>
+
+</body>
+</html>
+{% endblock main %}

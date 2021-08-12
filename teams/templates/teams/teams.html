@@ -29,7 +29,7 @@
 
                     <div class="team-btns">
                         <button class="small-btn">
-                            <img src="/pictures/list.svg" alt="List">
+                            <a href="{{ team.get_absolute_url }}"><img src="/pictures/list.svg" alt="List"></a>
                         </button>
                         <div class="score-circle">
                             <svg class="score_img" width="53" height="54" viewBox="0 0 53 54" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
                             <div class="score">{{ team.id }}</div>
                         </div>
                         <button class="small-btn">
-                            <img src="/pictures/team.png" alt="Team">
+                            <a href="{{ team.get_absolute_url }}"><img src="/pictures/team.png" alt="Team"></a>
                         </button>
                     </div>
                 </div>

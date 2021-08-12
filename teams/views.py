@@ -1,7 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Team
-from players.models import Player
-from match.models import Match
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def teams(request):

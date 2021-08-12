@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Player
-from match.models import Goals
+from statistic.models import PlayerMatchStatistic
 
 def players(request):
    return render(request, 'players/players.html')
@@ -9,12 +9,18 @@ def players(request):
 def player_detail(request, slug):
    player = get_object_or_404(Player, slug=slug)
    player_object = Player.objects.get(slug=slug)
-   goal = get_object_or_404(Goals, player=player)
-   goals = goal.goals
-   assists = goal.assists
-   removes = goal.removes
-   points = goals + assists
+   
+   stats = get_object_or_404(PlayerMatchStatistic, player=player)
 
+   if stats:
+      goals = stats.goals
+      assists = stats.assists
+      removes = stats.removes
+      points = stats.points()
+   else:
+      goals = 0
+      assists = 0
+      removes = 0
 
    context = {
       'player': player,

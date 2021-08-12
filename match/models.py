@@ -1,4 +1,3 @@
-from players.models import Player
 from django.db import models
 from teams.models import Team
 
@@ -16,17 +15,3 @@ class Match(models.Model):
   class Meta:
     verbose_name = "Матч"
     verbose_name_plural = "Матчи"
-
-class Goals(models.Model):
-  match = models.ManyToManyField(Match, related_name="match", verbose_name="матч")
-  goals = models.IntegerField("Голы", default=0)
-  assists = models.IntegerField("Ассисты", default=0)
-  removes = models.IntegerField("Удаления", default=0)
-  player = models.OneToOneField(Player, on_delete=models.CASCADE, related_name="player", verbose_name="Игрок", default='')
-
-  def __str__(self):
-      return f'{self.player.name} {self.player.surname} - результативное действие'
-
-  class Meta:
-    verbose_name = "Гол"
-    verbose_name_plural = "Голы"
