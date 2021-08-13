@@ -163,7 +163,7 @@
                     <td>
                         <time><span class="match-day">{{ match.date|date:"d.m.Y"  }}</span> | <span class="match-time">{{ match.date|date:"G:i" }}</span></time>
                     </td>
-                    <td class="score">0-3</td>
+                    <td class="score">{{ match.first_team_goals }} - {{ match.second_team_goals }}</td>
                 </tr>
                 {% endfor %}
                 {% for match in away_matches %}
@@ -180,7 +180,7 @@
                     <td>
                         <time><span class="match-day">{{ match.date|date:"d.m.Y"  }}</span> | <span class="match-time">{{ match.date|date:"G:i" }}</span></time>
                     </td>
-                    <td class="score">0-3</td>
+                    <td class="score win">{{ match.first_team_goals }} - {{ match.second_team_goals }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
