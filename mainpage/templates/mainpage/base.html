@@ -34,6 +34,7 @@
     {% url 'mainpage' as home_url %}
     {% url 'contacts' as contacts_url %}
     {% url 'teams' as teams_url %}
+    {% url 'table' as table_url %}
 
   <header>
       <img alt="logo" src="/pictures/logo.png">
@@ -42,7 +43,7 @@
               {% url '/' as url %}
               <li><a class="{% if request.path == home_url %} active {% endif %}" href="/">Главная</a></li>
               <li><a class="{% if request.path == teams_url %} active {% endif %}" href="{% url 'teams' %}">Команды</a></li>
-              <li><a href="#">Таблица</a></li>
+              <li><a class="{% if request.path == table_url %} active {% endif %}" href="{% url 'table' %}">Таблица</a></li>
               <li><a href="#">Статистика</a></li>
               <li><a href="#">Галерея</a></li>
               <li><a class="{% if request.path == contacts_url %} active {% endif %}" href="{% url 'contacts' %}">Контакты</a></li>

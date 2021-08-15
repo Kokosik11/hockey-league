@@ -1,0 +1,75 @@
+{% extends 'mainpage/base.html' %}
+
+{% load static %}
+
+{% block title %}УХЛ | Таблица{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'table/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'players/css/components.css' %}">
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+{% endblock head %}
+
+{% block main %}
+<main>
+    <section class="page-heading">
+        <h1>Объединённая Хоккейная Лига "Кубок Грифонов"</h1>
+        <div class="break-line"></div>
+        <h2>Турнирная таблица</h2>
+    </section>
+
+    <section class="tournament">
+        <div class="selection">
+            <select class="select-season">
+                <option value="1">За всё время</option>
+                <option value="2">2021/2022</option>
+            </select>
+            <div class="arrow">
+                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 2L8 8.08704L14 2" stroke="#FF4957" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="stats-table">
+            <table width="611px">
+                <thead>
+                    <tr>
+                        <th>Команда</th>
+                        <th class="stat">М</th>
+                        <th class="stat">В</th>
+                        <th class="stat">П</th>
+                        <th class="stat">О</th>
+                        <th class="stat">ЗШ</th>
+                        <th class="stat">ПШ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="teamlist-row">
+                        <td class="team-name_draw">
+                            <div class="flex-line">
+                                <img class="rival-logo" src="../../assets/imgs/4639021344470c8814e9f799073924a5 1.png" alt="">
+                                <div class="team-name">Барыс</div>
+                            </div>
+                        </td>
+                        <td>36</td>
+                        <td>20</td>
+                        <td>16</td>
+                        <td>50</td>
+                        <td>120</td>
+                        <td>90</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="details">
+            <span class="red-letter">M</span> – матчи, <span class="red-letter">В</span> – выигрыши, 
+            <span class="red-letter">П</span> – проигрыши, 
+            <span class="red-letter">О</span> – очки, <span class="red-letter">ЗШ</span> – забитые шайбы, <span class="red-letter">ПШ</span> – пропущенные шайбы.
+        </div>
+    </section>
+</main>
+{% endblock main %}

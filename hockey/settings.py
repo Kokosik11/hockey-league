@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'match.apps.MatchConfig',
     'contacts.apps.ContactsConfig',
     'statistic.apps.StatisticConfig',
+    'table.apps.TableConfig',
     'ckeditor',
     'django_countries',
 ]

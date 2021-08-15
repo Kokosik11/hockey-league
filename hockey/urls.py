@@ -10,6 +10,7 @@ urlpatterns = [
     path('players/', include('players.urls')),
     path('match/', include('match.urls')),
     path('contacts/', include('contacts.urls')),
+    path('table/', include('table.urls')),
     path('tinymce/', include('tinymce.urls')),
 ]
 
