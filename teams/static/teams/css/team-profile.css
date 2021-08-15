@@ -199,6 +199,7 @@ table thead tr th {
   font-weight: 400;
   text-align: center;
   color: #FFFFFF;
+  min-width: 70px;
 }
 
 td:first-child {
@@ -257,6 +258,21 @@ table tbody tr {
 .matches {
   width: 698px;
   display: none;
+}
+
+.team-name {
+  min-width: 200px;
+}
+
+.team-name a {
+  text-decoration: none;
+  color: #858585;
+  transition: 0.3s ease;
+}
+
+.team-name a:hover {
+  border-bottom: 1px solid #858585;
+  transition: 0.3s ease;
 }
 
 .rival-logo {

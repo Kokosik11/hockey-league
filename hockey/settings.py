@@ -89,8 +89,8 @@ WSGI_APPLICATION = 'hockey.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hockey_data',
-        'USER': 'hockeyad',
+        'NAME': 'hockey',
+        'USER': 'tim',
         'PASSWORD': '2554963demidovT!',
         'PORT': 3306,
         'HOST': '127.0.0.1',
@@ -141,7 +141,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pictures')
 MEDIA_URL = '/pictures/'
-
-GRAPPELLI_SWITCH_USER = True
-
-GRAPPELLI_ADMIN_TITLE = "Админ-панель"

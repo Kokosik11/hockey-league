@@ -28,6 +28,7 @@ def team_detail(request, slug):
    captain = team.player.filter(captain=True)
    home_matches = team.home_team_matches.all()
    away_matches = team.away_team_matches.all()
+   matches = home_matches.count() + away_matches.count()
 
    context = {
       'team': team,
@@ -36,6 +37,7 @@ def team_detail(request, slug):
       'captain': captain,
       'away_matches': away_matches,
       'home_matches': home_matches,
+      'matches': matches,
     }
 
    return render(request, 'teams/team-detail.html', context)
