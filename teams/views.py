@@ -26,8 +26,8 @@ def team_detail(request, slug):
    team_object = Team.objects.get(slug=slug)
    players = team.player.all()
    captain = team.player.filter(captain=True)
-   home_matches = team.home_team_matches.all()
-   away_matches = team.away_team_matches.all()
+   home_matches = team.home_matches.all()
+   away_matches = team.away_matches.all()
    matches = home_matches.count() + away_matches.count()
 
    context = {

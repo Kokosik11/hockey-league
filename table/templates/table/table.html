@@ -45,15 +45,16 @@
                         <th class="stat">ПШ</th>
                     </tr>
                 </thead>
+                {% for team in teams %}
                 <tbody>
                     <tr class="teamlist-row">
                         <td class="team-name_draw">
                             <div class="flex-line">
-                                <img class="rival-logo" src="../../assets/imgs/4639021344470c8814e9f799073924a5 1.png" alt="">
-                                <div class="team-name">Барыс</div>
+                                <img class="rival-logo" src="{{ team.logo.url }}" alt="">
+                                <div class="team-name">{{ team.name }}</div>
                             </div>
                         </td>
-                        <td>36</td>
+                        <td>2</td>
                         <td>20</td>
                         <td>16</td>
                         <td>50</td>
@@ -61,7 +62,7 @@
                         <td>90</td>
                     </tr>
                 </tbody>
-
+                {% endfor %}
             </table>
         </div>
 

@@ -1,4 +1,11 @@
 from django.shortcuts import render
+from teams.models import Team
 
 def table(request):
-    return render(request, 'table/table.html')
+    teams = Team.objects.all()
+
+    context = {
+        'teams': teams,
+    }
+    
+    return render(request, 'table/table.html', context)
