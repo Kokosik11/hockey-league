@@ -28,11 +28,24 @@
                 <div class="promo-title">
                     <h3 class="club-name">Спортивный клуб "<span>{{ team.name }}</span>"</h3>
                     <div class="promo-stats">
-                        <div class="circle green"></div>
-                        <div class="circle green"></div>
-                        <div class="circle red"></div>
-                        <div class="circle red"></div>
-                        <div class="circle green"></div>
+                        {% for match in last_home_mathces %}
+                            {% if match.score_hometeam > match.score_awayteam %}
+                            <div class="circle green"></div>
+                            {% elif match.score_hometeam < match.score_awayteam %}
+                            <div class="circle red"></div>
+                            {% else %}
+                            <div class="circle yellow"></div>
+                            {% endif %}
+                        {% endfor %}
+                        {% for match in last_away_matches %}
+                            {% if match.score_awayteam > match.score_hometeam %}
+                            <div class="circle green"></div>
+                            {% elif match.score_awayteam < match.score_hometeam %}
+                            <div class="circle red"></div>
+                            {% else %}
+                            <div class="circle yellow"></div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="promo-country">

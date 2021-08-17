@@ -328,7 +328,7 @@ h1 {
 .news-content {
   display: flex;
   flex-wrap: wrap;
-  max-width: 943px;
+  width: 943px;
   justify-content: space-between;
 }
 

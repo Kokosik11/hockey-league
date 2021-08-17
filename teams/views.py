@@ -28,7 +28,11 @@ def team_detail(request, slug):
    captain = team.player.filter(captain=True)
    home_matches = team.home_matches.all()
    away_matches = team.away_matches.all()
-   matches = home_matches.count() + away_matches.count()
+   last_home_mathces = team.home_matches.all().order_by('-date')[:3]
+   last_away_matches = team.away_matches.all().order_by('-date')[:3]
+
+
+
 
    context = {
       'team': team,
@@ -37,7 +41,8 @@ def team_detail(request, slug):
       'captain': captain,
       'away_matches': away_matches,
       'home_matches': home_matches,
-      'matches': matches,
+      'last_home_mathces': last_home_mathces,
+      'last_away_matches': last_away_matches,
     }
 
    return render(request, 'teams/team-detail.html', context)

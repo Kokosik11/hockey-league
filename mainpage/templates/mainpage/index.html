@@ -75,11 +75,9 @@
         <section class="news">
             <h2>Новости</h2>
             <div class="news-content" id="posts-box">
-                <div class="news-block">
-                </div>
             </div>
             <div id="spinner-box" class="not-visible">
-                <img src="/pictures/Iphone-spinner-2.gif" alt="gif: spinner">
+                <img src="/pictures/Iphone-spinner-2.gif" alt="gif: spinner" style="width: 64px; height: 64px">
             </div>
             <button class="more-news" id="loading-box">
                 <div class="btn-icon"><span class="iconify" data-inline="false" data-icon="ant-design:cloud-sync-outlined"></span></div>
@@ -99,7 +97,7 @@
                         </div>
                         <button>
                             <span class="iconify" data-inline="false" data-icon="akar-icons:link-out" style="color: #FF4957; font-size: 26px;"></span>
-                            <span>Таблицы</span>
+                            <span><a href="{% url 'table' %}">Таблица</a></span>
                         </button>
                     </div>
                     <div class="section-icon">

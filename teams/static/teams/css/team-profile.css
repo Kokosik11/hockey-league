@@ -74,6 +74,10 @@ main {
   background-color: #FF4957;
 }
 
+.promo-stats .yellow {
+  background-color: #FFD234;
+}
+
 .promo-country,
 .promo-year,
 .promo-capitan,
