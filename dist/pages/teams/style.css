@@ -119,3 +119,29 @@ main {
     cursor: pointer;
     transition: .25s;
 }
+
+@media (max-width: 1024px) {
+    .teamlist {
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 360px) {
+    .teamlist .team {
+        width: 280px;
+    }
+
+    .page-display {
+        width: 70px;
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+}
