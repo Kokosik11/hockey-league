@@ -711,7 +711,7 @@ h1 {
     }
 }
 
-@media (max-width: 1142px) {
+@media (max-width: 1141px) {
     .pages, .social-links {
         display: none;
     } 
@@ -759,6 +759,10 @@ h1 {
 
     .section:nth-child(odd) .section-icon {
         padding-left: 0;
+    }
+
+    header {
+        padding: 0 30px;
     }
 
 }
