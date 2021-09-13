@@ -29,13 +29,14 @@ main {
 }
 
 .contact-details {
-    width: 1049px;
-    height: 417px;
+    padding: 58px 64px;
     background-color: #282828;
     display: flex;
     border-radius: 8px;
     align-items: center;
     justify-content: space-around;
+    max-width: 1049px;
+    width: 100%;
 }
 
 .contact-info {
@@ -157,7 +158,7 @@ main {
 }
 
 .feedback-content form input {
-    width: 374px;
+    max-width: 374px;
     height: 46px;
     background-color: #343434;
     border-radius: 8px;
@@ -236,4 +237,63 @@ main {
     top: 50px;
     right: 50px;
     z-index: 11;
+}
+
+.yandex-map_contacts {
+    width: 477px; 
+    height: 301px;
+}
+
+@media (max-width: 955px) {
+    .contact-details {
+        flex-direction: column;
+        max-width: 600px;
+    }
+
+    .contact-info {
+        margin-bottom: 50px;
+    }
+
+    .yandex-map_contacts {
+        width: 341px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .contact-details {
+        background: none;
+    }
+}
+
+@media (max-width: 455px) {
+    .feedback-content {
+        padding: 71px 10px;
+        width: 100%;
+        background: none;
+    }
+
+    .feedback-content::after,
+    .feedback-content::before {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .contact-details {
+        padding: 58px 0;
+    }
+    .contact-info {
+        width: 100%;
+    }
+    .yandex-map_contacts {
+        width: 100%;
+    }
+}
+
+@media (max-width: 330px) {
+    .contact-info::after,
+    .contact-info::before {
+        opacity: 0;
+    }
 }
