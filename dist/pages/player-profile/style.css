@@ -151,8 +151,13 @@ main {
 
 @media (max-width: 520px) {
     .table-papper {
-        max-width: 90%;
+        max-width: 100%;
     }
+
+    main {
+        align-items: normal;
+    }
+
     .stats-table {
         max-width: 100%;
         overflow-x: scroll;

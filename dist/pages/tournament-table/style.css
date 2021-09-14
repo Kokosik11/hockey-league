@@ -23,7 +23,7 @@ main {
 }
 
 .details {
-    width: 480px;
+    max-width: 480px;
     margin: 35px auto;
     color: #858585;
     font-size: 15px;
@@ -31,4 +31,14 @@ main {
 
 .red-letter {
     color: #FF4957;
+}
+
+@media (max-width: 611px) {
+    main {
+        align-items: normal;
+    }
+
+    .stats-table {
+        overflow-x: scroll;
+    }
 }

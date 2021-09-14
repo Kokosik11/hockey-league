@@ -236,6 +236,21 @@ main {
     background-color: #FFD234;
 }
 
+@media (max-width: 700px) {
+    main {
+        align-items: normal;
+    }
+
+    .table-two {
+        max-width: 100%;
+        overflow-x: scroll;
+    }
+
+    .selections {
+        margin: 83px auto 0;
+    }
+}
+
 @media (max-width: 640px) {
     .promo {
         flex-direction: column;
@@ -251,7 +266,7 @@ main {
 
 @media (max-width: 670px) {
     .teamlist-section, .matches-section {
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .table {
