@@ -223,7 +223,8 @@ h1 {
 
 .schedule {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 180px 58px;
 }
 
@@ -239,6 +240,7 @@ h1 {
     height: 842px;
     align-items: center;
     flex-direction: column;
+    overflow-x: auto;
 }
 
 .schedule-content {
@@ -290,7 +292,6 @@ h1 {
     margin: 3px 0;
     position: relative;
     min-width: 945px;
-    overflow-x: scroll;
 }
 
 .ceils-content::before {
@@ -841,9 +842,18 @@ h1 {
     overflow-x: scroll;
 } */
 
-@media (max-width: 944px) {
+@media (max-width: 961px) {
+    .schedule {
+        align-items: normal;
+    }
     .schedule-block {
         align-items: normal;
+    }
+    .schedule {
+        margin: 180px 0;
+    }
+    .schedule-heading {
+        margin: 0 auto;
     }
 }
 
