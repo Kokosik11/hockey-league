@@ -1,0 +1,61 @@
+{% extends 'mainpage/base.html' %}
+
+{% load static %}
+
+{% block title %}ОХЛ | Главная{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'documents/css/documents.css' %}">
+<link rel="stylesheet" href="{% static 'players/css/components.css' %}">
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+{% endblock head %}
+
+{% block main %}
+<main>
+    <section class="page-heading">
+        <h1>Объединённая Хоккейная Лига "Кубок Грифонов"</h1>
+        <div class="break-line"></div>
+        <h2>Документы</h2>
+    </section>
+
+    <section class="documents">
+        <div class="documents-content">
+            <div class="document">
+                <div class="document-header">
+                    <img src="/pictures/document.svg">
+                    <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                </div>
+
+                <div class="document-btn">
+                    <a href="#">Смотреть</a>
+                </div>
+            </div>
+
+            <div class="document">
+                <div class="document-header">
+                    <img src="/pictures/document.svg">
+                    <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                </div>
+
+                <div class="document-btn">
+                    <a href="#">Смотреть</a>
+                </div>
+            </div>
+
+            <div class="document">
+                <div class="document-header">
+                    <img src="/pictures/document.svg">
+                    <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                </div>
+
+                <div class="document-btn">
+                    <a href="#">Смотреть</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+{% endblock main %}

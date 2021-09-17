@@ -13,6 +13,7 @@ urlpatterns = [
     path('table/', include('table.urls')),
     path('gallery/', include('gallery.urls')),
     path('api/', include('api.urls')),
+    path('documents/', include('documents.urls')),
     path('tinymce/', include('tinymce.urls')),
 ]
 
