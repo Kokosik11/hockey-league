@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'table.apps.TableConfig',
     'gallery.apps.GalleryConfig',
     'api.apps.ApiConfig',
+    'documents.apps.DocumentsConfig',
     'ckeditor',
     'django_countries',
     'rest_framework',
