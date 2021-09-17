@@ -18,10 +18,9 @@ const handleGetData = () => {
       setTimeout(()=>{
         spinnerBox.classList.add('not-visible')
         data.map(post=>{
-          console.log(post)
           postBox.innerHTML += `<div class="news-block" id="posts-box">
                                   <img src="pictures/${post.image}" alt="news photo">
-                                  <div><span><a href="${post.get_absolute_url}" id="more">Читать</a></span></div>
+                                  <div><span><a href="/posts/${post.slug}" id="more">Читать</a></span></div>
                                   <h3 class="news-heading">${post.title}</h3>
                                 </div>`
         })

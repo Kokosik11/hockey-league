@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}УХЛ | Контакты{% endblock title %}
+{% block title %}ОХЛ | Контакты{% endblock title %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'contacts/css/style.css' %}">
@@ -57,7 +57,9 @@
               </div>
           </div>
 
-          <div id="map" style="width: 477px; height: 301px;"></div>
+          <div class="yandex-map_contacts">
+            <div id="map" style="width: 100%; height: 100%;"></div>
+          </div>
       </section>
 
       <section class="feedback">

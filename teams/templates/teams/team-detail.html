@@ -2,9 +2,10 @@
 
 {% load static %}
 
-{% block title %}УХЛ | {{ team.name }}{% endblock title %}
+{% block title %}ОХЛ | {{ team.name }}{% endblock title %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'players/css/components.css' %}">
 <link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
 <link rel="stylesheet" href="{% static 'teams/css/team-profile.css' %}">
 <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
@@ -151,24 +152,77 @@
                 </svg>
             </div>
         </div>
-        <table width="100%">
-            <thead>
-                <tr>
-                    <th>Команды</th>
-                    <th>Турнир</th>
-                    <th>Дата</th>
-                    <th>Счёт</th>
-                </tr>
-            </thead>
+        <div class="table">
 
-            <tbody>
-                {% for match in home_matches %}
-                    {% if match.score_hometeam > match.score_awayteam %}
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <th>Команды</th>
+                        <th>Турнир</th>
+                        <th>Дата</th>
+                        <th>Счёт</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for match in home_matches %}
+                        {% if match.score_hometeam > match.score_awayteam %}
+                        <tr class="matches-row win">
+                            <td class="team-name">
+                                <div class="flex-line">
+                                    <img class="rival-logo" src="{{ match.second_team.logo.url }}" alt="">
+                                    <div class="team-name">{{ match.first_team }} - <a href="{{ match.second_team.get_absolute_url }}">{{ match.second_team }}</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="person-name">Кубок грифонов</div>
+                            </td>
+                            <td>
+                                <time><span class="match-day">{{ match.date|date:"d.m.Y"  }}</span> | <span class="match-time">{{ match.date|date:"G:i" }}</span></time>
+                            </td>
+                            <td class="score">{{ match.score_hometeam }} - {{ match.score_awayteam }}</td>
+                        </tr>
+                        {% elif match.score_hometeam < match.score_awayteam %}
+                        <tr class="matches-row lose">
+                            <td class="team-name">
+                                <div class="flex-line">
+                                    <img class="rival-logo" src="{{ match.second_team.logo.url }}" alt="">
+                                    <div class="team-name">{{ match.first_team }} - <a href="{{ match.second_team.get_absolute_url }}">{{ match.second_team }}</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="person-name">Кубок грифонов</div>
+                            </td>
+                            <td>
+                                <time><span class="match-day">{{ match.date|date:"d.m.Y"  }}</span> | <span class="match-time">{{ match.date|date:"G:i" }}</span></time>
+                            </td>
+                            <td class="score">{{ match.score_hometeam }} - {{ match.score_awayteam }}</td>
+                        </tr>
+                        {% else %}
+                        <tr class="matches-row draw">
+                            <td class="team-name">
+                                <div class="flex-line">
+                                    <img class="rival-logo" src="{{ match.second_team.logo.url }}" alt="">
+                                    <div class="team-name">{{ match.first_team }} - <a href="{{ match.second_team.get_absolute_url }}">{{ match.second_team }}</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="person-name">Кубок грифонов</div>
+                            </td>
+                            <td>
+                                <time><span class="match-day">{{ match.date|date:"d.m.Y"  }}</span> | <span class="match-time">{{ match.date|date:"G:i" }}</span></time>
+                            </td>
+                            <td class="score">{{ match.score_hometeam }} - {{ match.score_awayteam }}</td>
+                        </tr>
+                        {% endif %}                
+                    {% endfor %}
+                    {% for match in away_matches %}
+                    {% if match.score_awayteam > match.score_hometeam %}
                     <tr class="matches-row win">
-                        <td class="team-name">
+                        <td class="team-named">
                             <div class="flex-line">
-                                <img class="rival-logo" src="{{ match.second_team.logo.url }}" alt="">
-                                <div class="team-name">{{ match.first_team }} - <a href="{{ match.second_team.get_absolute_url }}">{{ match.second_team }}</div>
+                                <img class="rival-logo" src="{{ match.first_team.logo.url }}" alt="">
+                                <div class="team-name"><a href="{{ match.first_team.get_absolute_url }}">{{ match.first_team }}</a> - {{ match.second_team }}</div>
                             </div>
                         </td>
                         <td>
@@ -179,12 +233,12 @@
                         </td>
                         <td class="score">{{ match.score_hometeam }} - {{ match.score_awayteam }}</td>
                     </tr>
-                    {% elif match.score_hometeam < match.score_awayteam %}
+                    {% elif match.score_awayteam < match.score_hometeam %}
                     <tr class="matches-row lose">
-                        <td class="team-name">
+                        <td class="team-named">
                             <div class="flex-line">
-                                <img class="rival-logo" src="{{ match.second_team.logo.url }}" alt="">
-                                <div class="team-name">{{ match.first_team }} - <a href="{{ match.second_team.get_absolute_url }}">{{ match.second_team }}</div>
+                                <img class="rival-logo" src="{{ match.first_team.logo.url }}" alt="">
+                                <div class="team-name"><a href="{{ match.first_team.get_absolute_url }}">{{ match.first_team }}</a> - {{ match.second_team }}</div>
                             </div>
                         </td>
                         <td>
@@ -197,10 +251,10 @@
                     </tr>
                     {% else %}
                     <tr class="matches-row draw">
-                        <td class="team-name">
+                        <td class="team-named">
                             <div class="flex-line">
-                                <img class="rival-logo" src="{{ match.second_team.logo.url }}" alt="">
-                                <div class="team-name">{{ match.first_team }} - <a href="{{ match.second_team.get_absolute_url }}">{{ match.second_team }}</div>
+                                <img class="rival-logo" src="{{ match.first_team.logo.url }}" alt="">
+                                <div class="team-name"><a href="{{ match.first_team.get_absolute_url }}">{{ match.first_team }}</a> - {{ match.second_team }}</div>
                             </div>
                         </td>
                         <td>
@@ -211,61 +265,11 @@
                         </td>
                         <td class="score">{{ match.score_hometeam }} - {{ match.score_awayteam }}</td>
                     </tr>
-                    {% endif %}                
-                {% endfor %}
-                {% for match in away_matches %}
-                {% if match.score_awayteam > match.score_hometeam %}
-                <tr class="matches-row win">
-                    <td class="team-named">
-                        <div class="flex-line">
-                            <img class="rival-logo" src="{{ match.first_team.logo.url }}" alt="">
-                            <div class="team-name"><a href="{{ match.first_team.get_absolute_url }}">{{ match.first_team }}</a> - {{ match.second_team }}</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="person-name">Кубок грифонов</div>
-                    </td>
-                    <td>
-                        <time><span class="match-day">{{ match.date|date:"d.m.Y"  }}</span> | <span class="match-time">{{ match.date|date:"G:i" }}</span></time>
-                    </td>
-                    <td class="score">{{ match.score_hometeam }} - {{ match.score_awayteam }}</td>
-                </tr>
-                {% elif match.score_awayteam < match.score_hometeam %}
-                <tr class="matches-row lose">
-                    <td class="team-named">
-                        <div class="flex-line">
-                            <img class="rival-logo" src="{{ match.first_team.logo.url }}" alt="">
-                            <div class="team-name"><a href="{{ match.first_team.get_absolute_url }}">{{ match.first_team }}</a> - {{ match.second_team }}</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="person-name">Кубок грифонов</div>
-                    </td>
-                    <td>
-                        <time><span class="match-day">{{ match.date|date:"d.m.Y"  }}</span> | <span class="match-time">{{ match.date|date:"G:i" }}</span></time>
-                    </td>
-                    <td class="score">{{ match.score_hometeam }} - {{ match.score_awayteam }}</td>
-                </tr>
-                {% else %}
-                <tr class="matches-row draw">
-                    <td class="team-named">
-                        <div class="flex-line">
-                            <img class="rival-logo" src="{{ match.first_team.logo.url }}" alt="">
-                            <div class="team-name"><a href="{{ match.first_team.get_absolute_url }}">{{ match.first_team }}</a> - {{ match.second_team }}</div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="person-name">Кубок грифонов</div>
-                    </td>
-                    <td>
-                        <time><span class="match-day">{{ match.date|date:"d.m.Y"  }}</span> | <span class="match-time">{{ match.date|date:"G:i" }}</span></time>
-                    </td>
-                    <td class="score">{{ match.score_hometeam }} - {{ match.score_awayteam }}</td>
-                </tr>
-                {% endif %}
-                {% endfor %}
-            </tbody>
-        </table>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </section>
 </main>
 {% endblock main %}

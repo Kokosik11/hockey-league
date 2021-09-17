@@ -1,12 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+{% extends 'mainpage/base.html' %}
+
+{% load static %}
+
+{% block title %}ОХЛ | {{ object.title }}{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'mainpage/css/post.css' %}">
+<link rel="stylesheet" href="{% static 'players/css/components.css' %}">
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+{% endblock head %}
+
+{% block main %}
 <body>
-    {{ object.title }}
+  <main>
+    <section class="post">
+        <div class="post-container">
+            <div class="post-header">
+                <img src="{{ object.image.url }}" alt="title image">
+                <div class="post-heading">
+                    <h2>{{ object.title }}</h2>
+                </div>
+            </div>
+            <div class="post-content">
+              {{ object.content|safe }}
+            </div>
+        </div>
+    </section>
+
+  </main>
+
 </body>
-</html>
+{% endblock main %}

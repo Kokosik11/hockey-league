@@ -2,9 +2,10 @@
 
 {% load static %}
 
-{% block title %}УХЛ | Команды{% endblock title %}
+{% block title %}ОХЛ | Команды{% endblock title %}
 
 {% block head %}
+<link rel="stylesheet" href="{% static 'players/css/components.css' %}">
 <link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
 <link rel="stylesheet" href="{% static 'teams/css/teams.css' %}">
 <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
@@ -46,15 +47,19 @@
         </section>
 
         
-        <section class="pages">
-            {%if page_obj.has_previous %} {# whether the previous page exists #}
-                <a href="?page={{page_obj.previous_page_number}}"><img src="/pictures/ArrowLeft.svg" alt=""></a> {# link to the prev page #}
+        <section class="pages-controll">
+                <div class="pages-btns">
+                    {%if page_obj.has_previous %} {# whether the previous page exists #}
+                <a class="circle prev" href="?page={{page_obj.previous_page_number}}"><img src="/pictures/ArrowLeft.svg" alt=""></a> {# link to the prev page #}
             {% endif %}
-            <span class="current-page">{{page_obj.number}}</span> {# the current page number #}
+            <div class="page-display">
+                <span class="active-page">{{page_obj.number}}</span>/<span class="all-pages">3</span>
+            </div>
             
             {%if page_obj.has_next %} {# whether the next page exists #}
-                <a href="?page={{page_obj.next_page_number}}"><img src="/pictures/ArrowRight.svg" alt=""></a> {# link to the next page #}
+                <a class="circle_active next" href="?page={{page_obj.next_page_number}}"><img src="/pictures/ArrowRight.svg" alt=""></a> {# link to the next page #}
             {% endif %}
+            </div>
         </section>
     </article>
 </main>

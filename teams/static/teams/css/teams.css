@@ -17,23 +17,16 @@ main {
   color: rgba(255, 255, 255, 0.43);
 }
 
-.page-heading .break-line {
-  width: 200px;
-  height: 3px;
-  background-color: #FF4957;
-  margin: 28px 0;
-}
-
 .teamlist {
   display: flex;
   flex-wrap: wrap;
-  width: 1200px;
+  max-width: 1200px;
   justify-content: space-between;
 }
 
 .teamlist .team {
   width: 336px;
-  min-height: 326px;
+  min-height: 360px;
   background-color: #2E2D2D;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   margin-bottom: 70px;
@@ -42,27 +35,7 @@ main {
 
 .teamlist .team img {
   max-width: 150px;
-}
-
-.teamlist .team .team-btns {
-  display: flex;
-  align-items: flex-end;
-  margin-top: 15px;
-  width: 260px;
-  justify-content: space-between;
-}
-
-.team-btns button,
-.team-btns .score-circle {
-  background-color: #2E2D2D;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  outline: none;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25),
-              inset 0 -1px 4px 0 rgba(0, 0, 0, 0.25);
+  max-height: 150px;
 }
 
 .score-circle {
@@ -88,26 +61,6 @@ main {
   color: #1a1a1a;
 }
 
-.small-btn {
-  width: 53px;
-  height: 53px;
-  transition: .25s;
-}
-
-.small-btn:hover {
-  background-color: #292828;
-  cursor: pointer;
-  transition: .25s;
-}
-
-.small-btn img {
-  width: 29px;
-}
-
-.small-btn:first-child img {
-  width: 19px;
-}
-
 .team .profile {
   display: flex;
   flex-direction: column;
@@ -121,7 +74,7 @@ main {
 
 .pages-btns {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 396px;
   margin: 0 auto;
 }
@@ -154,6 +107,7 @@ main {
   width: 140px;
   border-bottom: 3px solid #FF4957;
   font-size: 28px;
+  margin: 0 10px;
   color: #929292;
 }
 
@@ -168,13 +122,28 @@ main {
   transition: .25s;
 }
 
-.pages {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 1024px) {
+  .teamlist {
+      justify-content: space-evenly;
+  }
 }
-.current-page {
-  color: #fff;
-  font-size: 20px;
-  padding: 5px;
+
+@media (max-width: 360px) {
+  .teamlist .team {
+      width: 280px;
+  }
+
+  .page-display {
+      width: 70px;
+  }
+}
+
+@media (max-width: 350px) {
+  h1 {
+      font-size: 32px;
+  }
+
+  h2 {
+      font-size: 28px;
+  }
 }

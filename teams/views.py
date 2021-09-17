@@ -4,7 +4,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def teams(request):
    teams = Team.objects.all()
-   p = Paginator(teams, 6)
+   p = Paginator(teams, 1)
    page_number = request.GET.get('page')
    try:
       page_obj = p.get_page(page_number)  # returns the desired page object

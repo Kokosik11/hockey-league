@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}УХЛ | {{ player.name }} {{ player.surname }}{% endblock title %}
+{% block title %}ОХЛ | {{ player.name }} {{ player.surname }}{% endblock title %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
@@ -33,24 +33,26 @@
                             <span class="bgspan deleted"><span class="title">Удаления</span><span class="total red">{{ removes }}</span></span>
                             <span class="bgspan scores"><span class="title">Очки</span><span class="total">{{ points }}</span></span>
                         </div>
-                        <div class="full-stats">
-                            <div class="full-stats_title">Полная статистика</div>
-                        </div>
                     </div>
 
                     <div class="full-info">
-                        <div class="full-info_title">
+                        <div class="full-info_content">
                             <div class="info-title born-title">Родился</div>
-                            <div class="info-title citizen-title">Гражданство</div>
-                            <div class="info-title club-title">Клуб</div>
-                            <div class="info-title hnw-title">Рост и вес</div>
+                            <div class="info-content born-content">{{ player.date_of_birth }}<span class="separator">|</span>{{ player.age }} лет</div>
                         </div>
                         <div class="full-info_content">
-                            <div class="info-content born-content">{{ player.date_of_birth }}<span class="separator">|</span>{{ player.age }} лет</div>
+                            <div class="info-title citizen-title">Гражданство</div>
                             <div class="info-content itizen-content"><img src="{{ player.citizenship.flag }}"> {{ player.citizenship.name }}</div>
-                            <div class="info-content club-content"><img class="rival-logo" src="{{ player.team.logo.url }}"><a href="{{ player.team.get_absolute_url }}">{{ player.team }}</a><span class="separator">|</span>Нападающий</div>
+                        </div>
+                        <div class="full-info_content">
+                            <div class="info-title club-title">Клуб</div>
+                            <div class="info-content club-content"><a href="{{ player.team.get_absolute_url }}">{{ player.team }}</a><span class="separator">|</span>Нападающий</div>
+                        </div>
+                        <div class="full-info_content">
+                            <div class="info-title hnw-title">Рост и вес</div>
                             <div class="info-content hnw-content">{{ player.height }}<span class="separator">|</span>{{ player.weight }}</div>
                         </div>
+
                     </div>
                 </div>
 

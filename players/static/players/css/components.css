@@ -142,12 +142,16 @@ table tbody tr {
   transition: .25s;
 }
 
-.small-btn img {
+.small-btn a {
   width: 29px;
 }
 
-.small-btn:first-child img {
+.small-btn:first-child a {
   width: 19px;
+}
+
+.team-btns .small-btn a img {
+  max-width: 25px;
 }
 
 .team-btns button,

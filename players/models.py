@@ -5,6 +5,17 @@ from django.urls import reverse
 from django_countries.fields import CountryField
 
 
+class Position(models.Model):
+   name = models.CharField('Позиция', max_length=255, default='')
+
+   class Meta:
+      verbose_name = 'Позиция'
+      verbose_name_plural = 'Позиции'
+
+   def __str__(self) -> str:
+      return self.name
+
+
 class Player(models.Model):
    team = models.ForeignKey(Team, related_name="player", verbose_name="команда", on_delete=models.PROTECT, null=True, blank=True)
    avatar = models.ImageField('Фото игрока', default='default.jpg', upload_to='player_images')
@@ -15,7 +26,7 @@ class Player(models.Model):
    height = models.PositiveSmallIntegerField('Рост', blank=True)
    weight = models.PositiveSmallIntegerField('Вес', blank=True)
    citizenship = CountryField()
-   position = models.CharField('Позиция', max_length=100, default='')
+   position = models.ForeignKey(Position, related_name='postion', verbose_name='Позиция', on_delete=models.CASCADE, null=True, blank=True)
    date_of_birth = models.DateField("Дата рождения", default=timezone.now)
    age = models.PositiveSmallIntegerField('Возраст', blank=True, default=20)
    captain = models.BooleanField('Капитан', default=False)

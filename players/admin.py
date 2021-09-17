@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Player
+from .models import Player, Position
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
@@ -9,6 +9,8 @@ class PlayerAdmin(admin.ModelAdmin):
     search_fields = ('name', 'surname')
     ordering = ['name']
 
+
+admin.site.register(Position)
 
 admin.site.site_title = 'Администрирование ОХЛ'
 admin.site.site_header = 'Объединенная хоккейная лига'
