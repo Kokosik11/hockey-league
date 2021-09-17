@@ -35,6 +35,7 @@
     {% url 'contacts' as contacts_url %}
     {% url 'teams' as teams_url %}
     {% url 'table' as table_url %}
+    {% url 'gallery' as gallery_url %}
 
   <header>
       <img alt="logo" src="/pictures/logo.png">
@@ -45,7 +46,7 @@
               <li><a class="{% if request.path == teams_url %} active {% endif %}" href="{% url 'teams' %}">Команды</a></li>
               <li><a class="{% if request.path == table_url %} active {% endif %}" href="{% url 'table' %}">Таблица</a></li>
               <li><a href="#">Статистика</a></li>
-              <li><a href="#">Галерея</a></li>
+              <li><a class="{% if request.path == gallery_url %} active {% endif %}" href="{% url 'gallery' %}">Галерея</a></li>
               <li><a class="{% if request.path == contacts_url %} active {% endif %}" href="{% url 'contacts' %}">Контакты</a></li>
           </ul>
       </nav>
@@ -123,7 +124,8 @@
       <img src="/pictures/lab.svg" alt="lab">
   </article>
 
-  <script src="{% static 'mainpage/js/schedule.js' %}"></script>
+  <!-- <script src="{% static 'mainpage/js/schedule.js' %}"></script> -->
   <script src="{% static 'mainpage/js/main.js' %}"></script>
   <script src="{% static 'mainpage/js/tpSelector.js' %}"></script>
+  <script src="{% static 'mainpage/js/getMatches.js' %}"></script>
 </body>

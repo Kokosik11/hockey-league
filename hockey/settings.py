@@ -47,8 +47,11 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
     'statistic.apps.StatisticConfig',
     'table.apps.TableConfig',
+    'gallery.apps.GalleryConfig',
+    'api.apps.ApiConfig',
     'ckeditor',
     'django_countries',
+    'rest_framework',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
@@ -91,7 +94,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hockey',
-        'USER': 'admin',
+        'USER': 'tim',
         'PASSWORD': '2554963demidovT!',
         'PORT': 3306,
         'HOST': '127.0.0.1',

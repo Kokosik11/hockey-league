@@ -11,6 +11,8 @@ urlpatterns = [
     path('match/', include('match.urls')),
     path('contacts/', include('contacts.urls')),
     path('table/', include('table.urls')),
+    path('gallery/', include('gallery.urls')),
+    path('api/', include('api.urls')),
     path('tinymce/', include('tinymce.urls')),
 ]
 

@@ -23,3 +23,16 @@ class PlayerMatchStatistic(models.Model):
     verbose_name_plural = "Голы/ассисты/удаления"
 
 
+class TeamMacthStatistics(models.Model):
+  score_hometeam = models.IntegerField("Голы домашней команды", default=0)
+  score_awayteam = models.IntegerField("Голы гостевой команды", default=0)
+  win = models.BooleanField("Победа", default=True)
+  defeat = models.BooleanField("Поражение", default=True)
+  match = models.ManyToManyField(Match, related_name="stat_match", verbose_name="Матч")
+
+  def __str__(self) -> str:
+    return f'{self.score_hometeam} - {self.score_awayteam}'
+
+  class Meta:
+    verbose_name = "Статы команды"
+    verbose_name_plural = "Статы команд"

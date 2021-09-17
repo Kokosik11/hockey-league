@@ -1,0 +1,90 @@
+{% extends 'mainpage/base.html' %}
+
+{% load static %}
+
+{% block title %}УХЛ | Галерея{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'gallery/css/gallery.css' %}">
+<link rel="stylesheet" href="{% static 'players/css/components.css' %}">
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+{% endblock head %}
+
+{% block main %}
+<body>
+    <main>
+        <section class="page-heading">
+            <h1>Объединённая Хоккейная Лига "Кубок Грифонов"</h1>
+            <div class="break-line"></div>
+            <h2>Фото/видео галерея</h2>
+        </section>
+
+        <section class="gallery">
+            <div class="selection">
+                <select class="select-season">
+                    <option value="1">Фото/видео</option>
+                    <option value="2">Фото</option>
+                    <option value="3">Видео</option>
+                </select>
+                <div class="arrow">
+                    <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 2L8 8.08704L14 2" stroke="#FF4957" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+
+
+            <div class="gallery-content">
+                <div class="column">
+                    <div class="image">
+                        <img src="../../assets/imgs/gallery/1.png" alt="Gallery: Photo 1">
+                        <img class="lupa" src="../../assets/imgs/lupa.svg" alt="Icon: Lupa">
+                    </div>
+                    <div class="image">
+                        <img src="../../assets/imgs/gallery/4.png" alt="Gallery: Photo 4">
+                        <img class="lupa" src="../../assets/imgs/lupa.svg" alt="Icon: Lupa">
+                    </div>
+                    <div class="image">
+                        <img src="../../assets/imgs/gallery/7.png" alt="Gallery: Photo 7">
+                        <img class="lupa" src="../../assets/imgs/lupa.svg" alt="Icon: Lupa">
+                    </div>    
+                </div>
+                <div class="column">
+                    <div class="image">
+                        <img src="../../assets/imgs/gallery/2.png" alt="Gallery: Photo 2">
+                        <img class="lupa" src="../../assets/imgs/lupa.svg" alt="Icon: Lupa">
+                    </div>
+                    <div class="image">
+                        <img src="../../assets/imgs/gallery/5.png" alt="Gallery: Photo 5">
+                        <img class="lupa" src="../../assets/imgs/lupa.svg" alt="Icon: Lupa">
+                    </div>
+                    <div class="image">
+                        <img src="../../assets/imgs/gallery/8.png" alt="Gallery: Photo 8">
+                        <img class="lupa" src="../../assets/imgs/lupa.svg" alt="Icon: Lupa">
+                    </div>        
+                </div>
+                <div class="column">
+                    <div class="image">
+                        <img src="../../assets/imgs/gallery/3.png" alt="Gallery: Photo 3">
+                        <img class="lupa" src="../../assets/imgs/lupa.svg" alt="Icon: Lupa">
+                    </div>
+                    <div class="image">
+                        <img src="../../assets/imgs/gallery/6.png" alt="Gallery: Photo 6">
+                        <img class="lupa" src="../../assets/imgs/lupa.svg" alt="Icon: Lupa">
+                    </div>
+                    <div class="image">
+                        <img src="../../assets/imgs/gallery/9.png" alt="Gallery: Photo 9">
+                        <img class="lupa" src="../../assets/imgs/lupa.svg" alt="Icon: Lupa">
+                    </div>  
+                </div>    
+            </div>
+
+            <button class="more-news">
+                <div class="btn-icon"><span class="iconify" data-inline="false" data-icon="ant-design:cloud-sync-outlined"></span></div>
+                <span>Загрузить ещё</span>
+            </button>
+        </section>
+    </main>
+</body>
+{% endblock main %}

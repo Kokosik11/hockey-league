@@ -282,6 +282,8 @@ h1 {
   flex-wrap: wrap;
   margin: 3px 0;
   position: relative;
+  min-width: 945px;
+  overflow-x: scroll;
 }
 
 .ceils-content::before {
@@ -311,6 +313,18 @@ h1 {
   font-size: 32px;
   margin: 0 17px;
   line-height: 77px;
+}
+
+.date-content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.date-content img {
+  width: 50px;
+  max-height: 50px;
 }
 
 .news {
@@ -703,3 +717,4 @@ h1 {
 .not-visible {
   display: none;
 }
+
