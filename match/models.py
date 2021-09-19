@@ -23,7 +23,7 @@ class Match(models.Model):
   
 
   def __str__(self) -> str:
-    return f'{self.first_team.name} - {self.second_team.name}, Дата: {self.date}'
+    return f'{self.first_team.name} - {self.second_team.name}, Дата: {self.date.strftime("%Y.%m.%d, %H:%M")}'
 
   class Meta:
     verbose_name = "Матч"

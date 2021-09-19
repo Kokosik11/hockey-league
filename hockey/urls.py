@@ -15,7 +15,9 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('documents/', include('documents.urls')),
     path('tinymce/', include('tinymce.urls')),
+    path('', include('favicon.urls')),
 ]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

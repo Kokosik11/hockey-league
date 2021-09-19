@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'TT Firs Neue';
   src: local('TT Firs Neue Regular'), local('TT-Firs-Neue-Regular'),
-      url('TTFirsNeue-Regular.woff2') format('woff2'),
-      url('TTFirsNeue-Regular.woff') format('woff'),
-      url('TTFirsNeue-Regular.ttf') format('truetype');
+      url('../fonts/TTFirsNeue-Regular.woff2') format('woff2'),
+      url('../fonts/TTFirsNeue-Regular.woff') format('woff'),
+      url('../fonts/TTFirsNeue-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -44,7 +44,7 @@ header {
   align-items: center;
   padding: 0 120px; 
   background-color: #07081D;
-  z-index: 10;
+  z-index: 99;
   box-shadow: 4px 0 4px 4px rgba(0, 0, 0, 0.247);
 }
 
@@ -363,6 +363,7 @@ h1 {
 .news-block {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 290px;
   height: 315px;
   background-color: #2E2D2D;
@@ -371,7 +372,6 @@ h1 {
   border-top-right-radius: 8px;
   border-bottom: 3px solid #FF4957;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.25);
-  text-align: center;
   position: relative;
 }
 
@@ -619,7 +619,7 @@ h1 {
 }
 
 .footer-content img {
-  width: 91px;
+  width: 74px;
   height: 74px;
 }
 

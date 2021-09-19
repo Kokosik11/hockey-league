@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'django_countries',
     'rest_framework',
+    'favicon',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
@@ -96,7 +97,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hockeydb',
         'USER': 'admin2',
-        'PASSWORD': '2554963demidovT',
+        'PASSWORD': '2554963demidovT!',
         'PORT': 3306,
         'HOST': '127.0.0.1',
     }
