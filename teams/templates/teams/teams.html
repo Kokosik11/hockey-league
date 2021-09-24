@@ -53,7 +53,7 @@
                 <a class="circle prev" href="?page={{page_obj.previous_page_number}}"><img src="/pictures/ArrowLeft.svg" alt=""></a> {# link to the prev page #}
             {% endif %}
             <div class="page-display">
-                <span class="active-page">{{page_obj.number}}</span>/<span class="all-pages">3</span>
+                <span class="active-page">{{page_obj.number}}</span>/<span class="all-pages">{{ page_obj.paginator.num_pages }}</span>
             </div>
             
             {%if page_obj.has_next %} {# whether the next page exists #}

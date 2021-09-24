@@ -43,10 +43,11 @@
                         <th class="stat">О</th>
                         <th class="stat">ЗШ</th>
                         <th class="stat">ПШ</th>
+                        <th hidden class="stat">НЧ</th>
                     </tr>
                 </thead>
-                {% for team in teams %}
                 <tbody>
+                {% for team in teams %}
                     <tr class="teamlist-row">
                         <td class="team-name_draw">
                             <div class="flex-line">
@@ -54,15 +55,17 @@
                                 <div class="team-name">{{ team.name }}</div>
                             </div>
                         </td>
-                        <td>2</td>
-                        <td>20</td>
-                        <td>16</td>
-                        <td>50</td>
-                        <td>120</td>
-                        <td>90</td>
+                        <td class="match-count">2</td>
+                        <td class="match-wins">20</td>
+                        <td class="match-lose">16</td>
+                        <td class="team-score">50</td>
+                        <td class="team-goals">120</td>
+                        <td class="team-miss">90</td>
+                        <td hidden class="team-draw">0</td>
                     </tr>
-                </tbody>
                 {% endfor %}
+                </tbody>
+
             </table>
         </div>
 
@@ -73,4 +76,7 @@
         </div>
     </section>
 </main>
+
+<script src="{% static 'table/js/statistic.js' %}"></script>
+
 {% endblock main %}
