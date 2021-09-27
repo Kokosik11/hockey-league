@@ -5,95 +5,74 @@ fetch(`/api/matches`)
     .then(response => response.json())
     .then(data => {
         console.log(data);
-    
-        teams.forEach(team => {
-            let teamObj = {
-                name: team.querySelector('.team-name').textContent,
-                matches: team.querySelector('.match-count'),
-                wins: team.querySelector('.match-wins'),
-                loses: team.querySelector('.match-lose'),
-                score: team.querySelector('.team-score'),
-                draw: team.querySelector('.team-draw'),
-                goals: team.querySelector('.team-goals'),
-                miss: team.querySelector('.team-miss'),
-            }
 
-            team.querySelector('.match-count').innerHTML = 0
-            team.querySelector('.match-wins').innerHTML = 0
-            team.querySelector('.match-lose').innerHTML = 0
-            team.querySelector('.team-score').innerHTML = 0
-            team.querySelector('.team-goals').innerHTML = 0
-            team.querySelector('.team-miss').innerHTML = 0
+        let teamList = [];
 
-            data.forEach(datateam => {
-                let teamStatistic = {
-                    matches: +teamObj.matches.innerHTML,
-                    wins: +teamObj.wins.innerHTML,
-                    loses: +teamObj.loses.innerHTML,
-                    winScore: 0,
-                    drawScore: +teamObj.draw.innerHTML,
-                    score: +teamObj.score.innerHTML,
-                    goals: +teamObj.goals.innerHTML,
-                    miss: +teamObj.miss.innerHTML
-                }
-
-                if(datateam.first_team.name == teamObj.name) {
-                    // Total matches for team
-                    teamStatistic.matches += 1,
-                    teamObj.matches.innerHTML = teamStatistic.matches;
-
-                    // Total wins for team
-                    teamStatistic.wins += datateam.score_hometeam > datateam.score_awayteam ? 1 : 0
-                    teamObj.wins.innerHTML = teamStatistic.wins;
-
-                    // Total loses for team
-                    teamStatistic.loses += datateam.score_hometeam < datateam.score_awayteam ? 1 : 0; 
-                    teamObj.loses.innerHTML = teamStatistic.loses;
-
-                    // Total scores for team 
-                
-
-                    // Total goals for team
-                    teamStatistic.goals += datateam.score_hometeam;
-                    teamObj.goals.innerHTML = teamStatistic.goals;
-
-                    // Total misses for team
-                    teamStatistic.miss += datateam.score_awayteam;
-                    teamObj.miss.innerHTML = teamStatistic.miss;
-
-                }
-
-                if(datateam.second_team.name == teamObj.name) {
-                    // Total matches for team
-                    teamStatistic.matches += 1,
-                    teamObj.matches.innerHTML = teamStatistic.matches;
-
-                    // Total wins for team
-                    teamStatistic.wins += datateam.score_awayteam > datateam.score_hometeam ? 1 : 0; 
-                    teamObj.wins.innerHTML = teamStatistic.wins;
-
-                    // Total loses for team
-                    teamStatistic.loses += datateam.score_awayteam < datateam.score_hometeam ? 1 : 0; 
-                    teamObj.loses.innerHTML = teamStatistic.loses;
-
-                    // Total scores for team 
-
-
-                    // Total goals for team
-                    teamStatistic.goals += datateam.score_awayteam;
-                    teamObj.goals.innerHTML = teamStatistic.goals;
-
-                    // Total misses for team
-                    teamStatistic.miss += datateam.score_hometeam;
-                    teamObj.miss.innerHTML = teamStatistic.miss;
-                }
-
-                teamStatistic.drawScore = +teamObj.draw.innerHTML + (datateam.score_hometeam == datateam.score_awayteam ? 1 : 0);
-                teamObj.draw.innerHTML = teamStatistic.drawScore;
-
-                teamObj.score.innerHTML = (+teamObj.wins.innerHTML * 3) + teamStatistic.drawScore;
+        data.forEach(__team => {
+            teamList.push({ 
+                name: __team.first_team.name, 
+                matches: 0,
+                wins: 0,
+                loses: 0,
+                scores: 0,
+                goals: 0,
+                misses: 0,
+            })
+            teamList.push({ 
+                name: __team.second_team.name, 
+                matches: 0,
+                wins: 0,
+                loses: 0,
+                scores: 0,
+                goals: 0,
+                misses: 0,
             })
         })
+
+        const filteredStrings = teamList.filter((thing, index, self) =>
+            index === self.findIndex((t) => (
+                t.place === thing.place && t.name === thing.name
+            ))
+        )
+
+        data.forEach(__team => {
+            filteredStrings.forEach(team => {
+                if(team.name === __team.first_team.name) {
+                    team.matches += 1;
+                    team.wins += __team.score_hometeam > __team.score_awayteam ? 1 : 0;
+                    team.loses += __team.score_hometeam < __team.score_awayteam ? 1 : 0;
+                    team.scores += __team.score_hometeam > __team.score_awayteam ? 2 : 0;
+                    team.scores += __team.score_hometeam < __team.score_awayteam && __team.is_overtime ? 1 : 0;
+                    team.goals += __team.score_hometeam;
+                    team.misses += __team.score_awayteam;
+                }
+                else if(team.name === __team.second_team.name) {
+                    team.matches += 1;
+                    team.wins += __team.score_hometeam < __team.score_awayteam ? 1 : 0;
+                    team.loses += __team.score_hometeam > __team.score_awayteam ? 1 : 0;
+                    team.scores += __team.score_hometeam < __team.score_awayteam ? 2 : 0;
+                    team.scores += __team.score_hometeam > __team.score_awayteam && __team.is_overtime ? 1 : 0;
+                    team.goals += __team.score_awayteam;
+                    team.misses += __team.score_hometeam;
+                }
+            })
+        })
+
+        teams.forEach(team => {
+            filteredStrings.forEach(__team => {
+                if(team.querySelector(".team-name").textContent == __team.name) {
+                    team.querySelector(".match-count").innerHTML = __team.matches;
+                    team.querySelector(".match-wins").innerHTML = __team.wins;
+                    team.querySelector(".match-lose").innerHTML = __team.loses;
+                    team.querySelector(".team-score").innerHTML = __team.scores;
+                    team.querySelector(".team-goals").innerHTML = __team.goals;
+                    team.querySelector(".team-miss").innerHTML = __team.misses;
+                }
+            })
+        })
+
+        console.log(filteredStrings);
+
     })
     .then(data => {
         let tableBody = document.querySelector(".stats-table tbody");

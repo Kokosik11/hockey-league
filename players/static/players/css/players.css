@@ -193,22 +193,3 @@ main {
        margin-bottom: 15px;
    }
 }
-
-.player-info .avatar img {
-   max-width: 400px;
-}
-
-@media (max-width: 417px) {
-   .player-info .avatar img {
-      width: 50vw;
-   }
-}
-
-.club-content a {
-   color: #fff;
-   text-decoration: none;
-}
-
-.club-content a:hover {
-   text-decoration: underline;
-}

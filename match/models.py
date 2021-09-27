@@ -20,6 +20,7 @@ class Match(models.Model):
   season = models.ForeignKey(Season, related_name='match_season', verbose_name="Сезон", on_delete=models.CASCADE, blank=True, null=True)
   date = models.DateTimeField("Дата проведения")
   location = models.CharField("Место проведения", max_length=100)
+  is_overtime = models.BooleanField("Был ли овертайм", default=False, blank=True, null=True)
   
 
   def __str__(self) -> str:
