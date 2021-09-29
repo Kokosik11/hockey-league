@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{% static 'mainpage/css/style.css' %}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 {% endblock head %}
 
 {% block main %}
@@ -20,6 +21,22 @@
             <aside class="header-image">
                 <img src="pictures/logo.png" alt="logo">
             </aside>
+        </section>
+
+        <section class="partners">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="pictures/partners/partner-one.png" alt="partner-one">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="pictures/partners/partner-two.png" alt="partner-one">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="pictures/partners/partner-three.png" alt="partner-one">
+                    </div>
+                </div>
+              </div>
         </section>
 
         <section class="afisha">
@@ -138,5 +155,20 @@
         </section>
     </article>
 </main>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+          delay: 2000,
+      },
+      speed: 2000,
+      slidesPerView: 2,
+      
+    });
+</script>
+
 
 {% endblock main %}

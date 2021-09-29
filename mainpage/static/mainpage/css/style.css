@@ -1015,3 +1015,17 @@ h1 {
 .not-visible {
   display: none;
 }
+
+.partners {
+  margin-top: 58px;
+}
+
+.partners .swiper-slide img {
+  width: 80%;
+  height: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #FF4957;
+}
