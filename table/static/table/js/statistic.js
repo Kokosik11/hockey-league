@@ -67,6 +67,13 @@ fetch(`/api/matches`)
                     team.querySelector(".team-score").innerHTML = __team.scores;
                     team.querySelector(".team-goals").innerHTML = __team.goals;
                     team.querySelector(".team-miss").innerHTML = __team.misses;
+                } else {
+                    team.querySelector(".match-count").innerHTML = 0;
+                    team.querySelector(".match-wins").innerHTML = 0;
+                    team.querySelector(".match-lose").innerHTML = 0;
+                    team.querySelector(".team-score").innerHTML = 0;
+                    team.querySelector(".team-goals").innerHTML = 0;
+                    team.querySelector(".team-miss").innerHTML = 0;
                 }
             })
         })
